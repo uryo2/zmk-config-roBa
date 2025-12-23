@@ -87,7 +87,7 @@
 
         backspace {
             bindings = <&kp LS(BACKSPACE)>;
-            key-positions = <8 7>;
+            key-positions = <19 20>;
         };
 
         hidari {
@@ -153,7 +153,7 @@
 &trans  &trans   &trans   &trans   &trans  &trans      &trans                &trans                                                                      &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp K_VOLUME_DOWN C_VOLUME_UP>;
         };
 
         NUM {
