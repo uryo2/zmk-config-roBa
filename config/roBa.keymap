@@ -37,17 +37,12 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <11 12>;
+            key-positions = <11 10>;
         };
 
         shift_tab {
             bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
+            key-positions = <12 11>;
         };
 
         double_quotation {
@@ -58,6 +53,26 @@
         eq {
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
+        };
+
+        bt0 {
+            bindings = <&bt BT_SEL 0>;
+            key-positions = <26 9>;
+        };
+
+        bt1 {
+            bindings = <&bt BT_SEL 1>;
+            key-positions = <26 21>;
+        };
+
+        bt2 {
+            bindings = <&bt BT_SEL 2>;
+            key-positions = <26 33>;
+        };
+
+        bt3 {
+            bindings = <&bt BT_SEL 3>;
+            key-positions = <26 42>;
         };
     };
 
@@ -138,19 +153,19 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &kp LC(LS(TAB))  &trans     &kp LC(TAB)  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp LC(LS(TAB))  &kp LC(T)  &kp LC(TAB)  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1         &mkp MB3   &mkp MB2     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4         &kp LG(R)  &mkp MB5     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                           &kp LG(W)
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4         &kp LC(R)  &mkp MB5     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                           &kp LC(W)
             >;
         };
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp LS(LC(TAB))  &kp LC(T)  &kp LC(TAB)  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1         &mkp MB3   &mkp MB2     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4         &kp LC(R)  &mkp MB5     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                           &kp LC(W)
             >;
         };
 
