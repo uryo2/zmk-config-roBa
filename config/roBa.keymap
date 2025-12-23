@@ -42,7 +42,7 @@
 
         shift_tab {
             bindings = <&kp LS(TAB)>;
-            key-positions = <12 11>;
+            key-positions = <23 22>;
         };
 
         double_quotation {
@@ -73,6 +73,31 @@
         bt3 {
             bindings = <&bt BT_SEL 3>;
             key-positions = <26 42>;
+        };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <1 0>;
+        };
+
+        space+shift {
+            bindings = <&kp LS(SPACE)>;
+            key-positions = <38 22>;
+        };
+
+        backspace {
+            bindings = <&kp LS(BACKSPACE)>;
+            key-positions = <8 7>;
+        };
+
+        hidari {
+            bindings = <&kp LEFT_ARROW>;
+            key-positions = <11 12>;
+        };
+
+        migi {
+            bindings = <&kp RIGHT_ARROW>;
+            key-positions = <12 13>;
         };
     };
 
@@ -111,10 +136,10 @@
 
         default_layer {
             bindings = <
-&mt ESCAPE Q      &kp W         &kp E         &kp R                        &kp T                                                          &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                        &kp G        &kp LS(LG(S))                      &kp MINUS      &kp H        &kp J  &kp K      &kp L    &lt 5 APOSTROPHE
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &kp COLON                          &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 3 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 1 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
+&mt ESCAPE Q  &kp W           &kp E             &kp R                      &kp T                                                        &kp Y            &kp U  &lt 5 I    &kp O    &kp P
+&kp A         &kp S           &kp D             &kp F                      &kp G        &kp LS(LG(S))                    &kp MINUS      &kp H            &kp J  &kp K      &kp L    &lt 5 ENTER
+&kp Z         &kp X           &kp C             &kp V                      &kp B        &kp SEMICOLON                    &kp SEMICOLON  &kp N            &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL     &kp LEFT_SHIFT  &kp LEFT_COMMAND  &lt_to_layer_0 3 LEFT_ALT  &lt 2 SPACE  &lt_to_layer_0 1 INT_HENKAN      &kp BACKSPACE  &lt 1 BACKSPACE                             &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
