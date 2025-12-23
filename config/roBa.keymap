@@ -109,7 +109,7 @@
         zero {
             bindings = <&kp KP_NUMBER_0>;
             key-positions = <30 32 31>;
-            layers = <2>;
+            layers = <2 4>;
         };
 
         mb4 {
