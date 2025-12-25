@@ -13,6 +13,7 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
+    tapping-term-ms = <500>;
 };
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 5 250>; };
@@ -171,7 +172,7 @@
             label = "TO_LAYER_3";
         };
 
-    exit_AML: exit_AML {
+        exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
@@ -188,7 +189,6 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
             label = "KP_exit_AML";
         };
-
     };
 
     behaviors {
@@ -211,7 +211,7 @@
             tapping-term-ms = <100>;
         };
 
-  tog_off: toggle_layer_off {
+        tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
             display-name = "Toggle Layer Off";
@@ -235,10 +235,10 @@
 
         default_layer {
             bindings = <
-&mt ESCAPE Q      &kp W             &kp E         &kp R                       &kp T                                                     &kp Y        &kp U  &lt 5 I    &kp O    &mt MINUS P
-&mt LC(A) A       &mt LC(S) S       &kp D         &kp F                       &kp G        &kp LS(LG(S))                 &parenthesis   &kp H        &kp J  &kp K      &lt 5 L  &lt 5 ENTER
-&mt LEFT_SHIFT Z  &kp X             &mt LC(C) C   &mt LC(V) V                 &kp B        &kp SEMICOLON                 &kp APOS       &kp N        &kp M  &kp COMMA  &kp DOT  &mt EXCLAMATION SLASH
-&kp LEFT_CONTROL  &kp LEFT_COMMAND  &kp LEFT_ALT  &lt_to_layer_0 3 LC(SPACE)  &lt 2 SPACE  &lt_to_layer_0 1 LC(ESC)      &kp BACKSPACE  &lt 2 ENTER                             &kp DEL
+&mt ESCAPE Q                      &kp W             &kp E                        &kp R                       &kp T                                                     &kp Y        &kp U  &lt 5 I    &kp O    &mt MINUS P
+&mt_exit_AML_on_tap LC(A) A       &mt LC(S) S       &kp D                        &kp F                       &kp G        &kp LS(LG(S))                 &parenthesis   &kp H        &kp J  &kp K      &lt 5 L  &lt 5 ENTER
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X             &mt_exit_AML_on_tap LC(C) C  &mt LC(V) V                 &kp B        &kp SEMICOLON                 &kp APOS       &kp N        &kp M  &kp COMMA  &kp DOT  &mt EXCLAMATION SLASH
+&kp LEFT_CONTROL                  &kp LEFT_COMMAND  &kp LEFT_ALT                 &lt_to_layer_0 3 LC(SPACE)  &lt 2 SPACE  &lt_to_layer_0 1 LC(ESC)      &kp BACKSPACE  &lt 2 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -252,7 +252,7 @@
 &trans  &trans   &trans   &trans   &trans  &trans      &trans                &trans                                                                      &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp K_VOLUME_DOWN C_VOLUME_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
         NUM {
