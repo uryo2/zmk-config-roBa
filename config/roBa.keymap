@@ -190,7 +190,6 @@
             label = "KP_exit_AML";
         };
 
-
         mo_exit_AML: mo_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -208,8 +207,6 @@
 
             label = "MO_exit_AML";
         };
-
-
     };
 
     behaviors {
@@ -260,8 +257,6 @@
             quick-tap-ms = <200>;
             flavor = "balanced";
         };
-
-
     };
 
     keymap {
@@ -269,10 +264,10 @@
 
         default_layer {
             bindings = <
-&mt ESCAPE Q                      &kp W             &kp E                        &kp R                       &kp T                                                     &kp Y        &kp U  &lt 5 I    &kp O    &mt MINUS P
-&mt_exit_AML_on_tap LC(A) A       &mt LC(S) S       &kp D                        &kp F                       &kp G        &kp LS(LG(S))                 &parenthesis   &kp H        &kp J  &kp K      &lt 5 L  &lt 5 ENTER
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X             &mt_exit_AML_on_tap LC(C) C  &mt LC(V) V                 &kp B        &kp SEMICOLON                 &kp APOS       &kp N        &kp M  &kp COMMA  &kp DOT  &mt EXCLAMATION SLASH
-&kp LEFT_CONTROL                  &kp LEFT_COMMAND  &kp LEFT_ALT                 &lt_to_layer_0 3 LC(SPACE)  &lt 2 SPACE  &lt_to_layer_0 1 LC(ESC)      &kp BACKSPACE  &lt 2 ENTER                             &kp DEL
+&mt ESCAPE Q                      &kp W             &kp E                        &kp R                       &kp T                                                              &kp Y        &kp U  &lt 5 I    &kp O    &mt MINUS P
+&mt_exit_AML_on_tap LC(A) A       &mt LC(S) S       &kp D                        &kp F                       &kp G                 &kp LS(LG(S))                 &parenthesis   &kp H        &kp J  &kp K      &lt 5 L  &lt 5 ENTER
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X             &mt_exit_AML_on_tap LC(C) C  &mt LC(V) V                 &kp B                 &kp SEMICOLON                 &kp APOS       &kp N        &kp M  &kp COMMA  &kp DOT  &mt EXCLAMATION SLASH
+&kp LEFT_CONTROL                  &kp LEFT_COMMAND  &kp LEFT_ALT                 &lt_to_layer_0 3 LC(SPACE)  &lt_exit_AML 2 SPACE  &lt_to_layer_0 1 LC(ESC)      &kp BACKSPACE  &lt 2 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
