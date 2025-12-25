@@ -13,7 +13,7 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
-    tapping-term-ms = <500>;
+    tapping-term-ms = <700>;
 };
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 5 250>; };
@@ -82,11 +82,6 @@
         esc {
             bindings = <&kp ESC>;
             key-positions = <1 0>;
-        };
-
-        space+shift {
-            bindings = <&kp LS(SPACE)>;
-            key-positions = <38 22>;
         };
 
         backspace {
@@ -268,7 +263,6 @@
             quick-tap-ms = <200>;
             flavor = "balanced";
         };
-
     };
 
     keymap {
@@ -276,10 +270,10 @@
 
         default_layer {
             bindings = <
-&mt ESCAPE Q                      &kp W             &kp E                        &kp R                       &kp T                                                              &kp Y        &kp U  &lt 5 I    &kp O    &mt MINUS P
-&mt_exit_AML_on_tap LC(A) A       &mt LC(S) S       &kp D                        &kp F                       &kp G                 &kp LS(LG(S))                 &parenthesis   &kp H        &kp J  &kp K      &lt 5 L  &lt 5 ENTER
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X             &mt_exit_AML_on_tap LC(C) C  &mt LC(V) V                 &kp B                 &kp SEMICOLON                 &kp APOS       &kp N        &kp M  &kp COMMA  &kp DOT  &mt EXCLAMATION SLASH
-&kp LEFT_CONTROL                  &kp LEFT_COMMAND  &kp LEFT_ALT                 &lt_to_layer_0 3 LC(SPACE)  &lt_exit_AML 2 SPACE  &lt_to_layer_0 1 LC(ESC)      &kp BACKSPACE  &lt 2 ENTER                             &kp DEL
+&mt ESCAPE Q                      &kp W             &kp E                        &kp R                        &kp T                                                                      &kp Y        &kp U  &lt 5 I    &kp O    &mt MINUS P
+&mt_exit_AML_on_tap LC(A) A       &mt LC(S) S       &kp D                        &kp F                        &kp G                         &kp LS(LG(S))                 &parenthesis   &kp H        &kp J  &kp K      &lt 5 L  &lt 5 ENTER
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X             &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp B                         &kp SEMICOLON                 &kp APOS       &kp N        &kp M  &kp COMMA  &kp DOT  &mt EXCLAMATION SLASH
+&kp LEFT_CONTROL                  &kp LEFT_COMMAND  &kp LEFT_ALT                 &lt_to_layer_0 3 LC(SPACE)   &lt_exit_AML_on_hold 2 SPACE  &lt_to_layer_0 1 LC(ESC)      &kp BACKSPACE  &lt 2 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -318,10 +312,10 @@
 
         MOUSE {
             bindings = <
-&to_layer_0 Q  &to_layer_0 W  &to_layer_0 E  &to_layer_0 R  &to_layer_0 T                                            &trans                 &to_layer_0 U  &to_layer_0 I          &to_layer_0 O    &to_layer_0 P
-&trans         &trans         &to_layer_0 D  &to_layer_0 F  &to_layer_0 G  &trans                &to_layer_0 MINUS   &to_layer_0 H          &mkp MB1       &mkp MB2               &trans           &trans
-&trans         &to_layer_0 X  &trans         &trans         &to_layer_0 B  &to_layer_0 SEMI      &to_layer_0 SQT     &to_layer_0 N          &to_layer_0 M  &to_layer_0 LC(COMMA)  &to_layer_0 DOT  &trans
-&trans         &trans         &trans         &mo 3          &mo 2          &mo 1                 &to_layer_0 ESCAPE  &to_layer_0 BACKSPACE                                                         &kp LC(W)
+&to_layer_0 Q  &to_layer_0 W  &to_layer_0 E  &to_layer_0 R             &to_layer_0 T                                                           &trans                 &to_layer_0 U  &to_layer_0 I          &to_layer_0 O    &to_layer_0 P
+&trans         &trans         &to_layer_0 D  &to_layer_0 F             &to_layer_0 G                 &trans                &to_layer_0 MINUS   &to_layer_0 H          &mkp MB1       &mkp MB2               &trans           &trans
+&trans         &to_layer_0 X  &trans         &trans                    &to_layer_0 B                 &to_layer_0 SEMI      &to_layer_0 SQT     &to_layer_0 N          &to_layer_0 M  &to_layer_0 LC(COMMA)  &to_layer_0 DOT  &trans
+&trans         &trans         &trans         &lt_exit_AML 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &mo 1                 &to_layer_0 ESCAPE  &to_layer_0 BACKSPACE                                                         &kp LC(W)
             >;
         };
 
