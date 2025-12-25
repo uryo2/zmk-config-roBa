@@ -237,10 +237,10 @@
 
         MOUSE {
             bindings = <
-&to_layer_0 Q             &to_layer_0 W             &to_layer_0 E         &to_layer_0 R  &to_layer_0 T                                            &to_layer_0 Y          &to_layer_0 U  &to_layer_0 I          &to_layer_0 O    &to_layer_0 P
-&to_layer_0 A             &to_layer_0 S             &to_layer_0 D         &to_layer_0 F  &to_layer_0 G  &trans                &to_layer_0 MINUS   &to_layer_0 H          &mkp MB1       &mkp MB2               &trans           &trans
-&to_layer_0 Z             &to_layer_0 X             &to_layer_0 C         &to_layer_0 V  &to_layer_0 B  &to_layer_0 SEMI      &to_layer_0 SQT     &to_layer_0 N          &to_layer_0 M  &to_layer_0 LC(COMMA)  &to_layer_0 DOT  &trans
-&to_layer_0 LEFT_CONTROL  &to_layer_0 LEFT_COMMAND  &to_layer_0 LEFT_ALT  &mo 3          &mo 2          &mo 1                 &to_layer_0 ESCAPE  &to_layer_0 BACKSPACE                                                         &kp LC(W)
+&to_layer_0 Q  &to_layer_0 W  &to_layer_0 E  &to_layer_0 R  &to_layer_0 T                                            &trans                 &to_layer_0 U  &to_layer_0 I          &to_layer_0 O    &to_layer_0 P
+&trans         &trans         &to_layer_0 D  &to_layer_0 F  &to_layer_0 G  &trans                &to_layer_0 MINUS   &to_layer_0 H          &mkp MB1       &mkp MB2               &trans           &trans
+&trans         &to_layer_0 X  &trans         &trans         &to_layer_0 B  &to_layer_0 SEMI      &to_layer_0 SQT     &to_layer_0 N          &to_layer_0 M  &to_layer_0 LC(COMMA)  &to_layer_0 DOT  &trans
+&trans         &trans         &trans         &mo 3          &mo 2          &mo 1                 &to_layer_0 ESCAPE  &to_layer_0 BACKSPACE                                                         &kp LC(W)
             >;
         };
 
