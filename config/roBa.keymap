@@ -257,6 +257,18 @@
             quick-tap-ms = <200>;
             flavor = "balanced";
         };
+
+        lt_exit_AML_on_hold: lt_exit_AML_on_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_exit_AML_ON_HOLD";
+            bindings = <&mo_exit_AML>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
     };
 
     keymap {
