@@ -13,7 +13,7 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
-    tapping-term-ms = <700>;
+    tapping-term-ms = <900>;
 };
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 5 250>; };
