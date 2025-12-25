@@ -99,12 +99,6 @@
             key-positions = <12 13>;
         };
 
-        kakko1 {
-            bindings = <&parenthesis>;
-            key-positions = <8 7>;
-            layers = <3>;
-        };
-
         zero {
             bindings = <&kp KP_NUMBER_0>;
             key-positions = <30 32 31>;
@@ -125,7 +119,7 @@
 
         mb3 {
             bindings = <&mkp MB3>;
-            key-positions = <19 18>;
+            key-positions = <19 18 20>;
             layers = <4>;
         };
     };
@@ -270,10 +264,10 @@
 
         default_layer {
             bindings = <
-&mt ESCAPE Q                      &kp W             &kp E                        &kp R                        &kp T                                                                      &kp Y        &kp U  &lt 5 I    &kp O    &mt MINUS P
-&mt_exit_AML_on_tap LC(A) A       &mt LC(S) S       &kp D                        &kp F                        &kp G                         &kp LS(LG(S))                 &parenthesis   &kp H        &kp J  &kp K      &lt 5 L  &lt 5 ENTER
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X             &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp B                         &kp SEMICOLON                 &kp APOS       &kp N        &kp M  &kp COMMA  &kp DOT  &mt EXCLAMATION SLASH
-&kp LEFT_CONTROL                  &kp LEFT_COMMAND  &kp LEFT_ALT                 &lt_to_layer_0 3 LC(SPACE)   &lt_exit_AML_on_hold 2 SPACE  &lt_to_layer_0 1 LC(ESC)      &kp BACKSPACE  &lt 2 ENTER                             &kp DEL
+&mt ESCAPE Q                      &kp W             &kp E                        &kp R                             &kp T                                                                        &kp Y        &kp U  &lt 5 I    &kp O    &mt MINUS P
+&mt_exit_AML_on_tap LC(A) A       &mt LC(S) S       &kp D                        &kp F                             &kp G                         &kp LS(LG(S))                   &parenthesis   &kp H        &kp J  &kp K      &lt 5 L  &lt 5 ENTER
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X             &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V       &kp B                         &kp SEMICOLON                   &kp APOS       &kp N        &kp M  &kp COMMA  &kp DOT  &mt EXCLAMATION SLASH
+&kp LEFT_CONTROL                  &kp LEFT_COMMAND  &kp LEFT_ALT                 &lt_exit_AML_on_hold 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 ESC      &kp BACKSPACE  &lt 2 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -301,10 +295,10 @@
 
         ARROW_symbols {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW      &kp LC(TAB)              &kp HOME                                    &kp CARET       &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp HASH
-&kp TAB         &kp LEFT_ARROW          &kp DOWN_ARROW    &kp RIGHT_ARROW          &kp END   &trans      &kp NON_US_BACKSLASH  &kp DOLLAR      &kp AT_SIGN    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp QUESTION
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans            &kp LG(LS(RIGHT_ARROW))  &trans    &trans      &kp PIPE              &kp UNDERSCORE  &kp MINUS      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp EXCLAMATION
-&kp LCTRL       &kp LEFT_SHIFT          &kp LEFT_COMMAND  &trans                   &trans    &trans      &trans                &trans                                                                      &trans
+&kp ESCAPE  &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &kp HOME                                    &kp CARET       &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp HASH
+&kp TAB     &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END   &trans      &kp NON_US_BACKSLASH  &kp DOLLAR      &kp AT_SIGN    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp QUESTION
+&trans      &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans    &trans      &kp PIPE              &kp UNDERSCORE  &kp MINUS      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp EXCLAMATION
+&trans      &trans                  &trans          &trans                   &trans    &trans      &trans                &trans                                                                      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -312,19 +306,19 @@
 
         MOUSE {
             bindings = <
-&to_layer_0 Q  &to_layer_0 W  &to_layer_0 E  &to_layer_0 R             &to_layer_0 T                                                           &trans                 &to_layer_0 U  &to_layer_0 I          &to_layer_0 O    &to_layer_0 P
-&trans         &trans         &to_layer_0 D  &to_layer_0 F             &to_layer_0 G                 &trans                &to_layer_0 MINUS   &to_layer_0 H          &mkp MB1       &mkp MB2               &trans           &trans
-&trans         &to_layer_0 X  &trans         &trans                    &to_layer_0 B                 &to_layer_0 SEMI      &to_layer_0 SQT     &to_layer_0 N          &to_layer_0 M  &to_layer_0 LC(COMMA)  &to_layer_0 DOT  &trans
-&trans         &trans         &trans         &lt_exit_AML 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &mo 1                 &to_layer_0 ESCAPE  &to_layer_0 BACKSPACE                                                         &kp LC(W)
+&trans  &trans  &trans  &trans                    &trans                                                                &trans  &trans             &trans             &trans             &trans
+&trans  &trans  &trans  &trans                    &trans                        &trans                          &trans  &trans  &mkp_exit_AML MB1  &mkp_exit_AML MB3  &mkp_exit_AML MB2  &trans
+&trans  &trans  &trans  &trans                    &trans                        &trans                          &trans  &trans  &trans             &trans             &trans             &trans
+&trans  &trans  &trans  &lt_exit_AML 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 ESC      &trans  &trans                                                           &trans
             >;
         };
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &kp LEFT_CONTROL  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                        &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &kp LEFT_CONTROL  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
             >;
         };
 
