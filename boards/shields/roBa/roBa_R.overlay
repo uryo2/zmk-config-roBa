@@ -1,4 +1,9 @@
 #include "roBa.dtsi"
+#include <input/processors.dtsi>
+
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+};
 
 &default_transform {
     col-offset = <6>;
@@ -19,6 +24,8 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
+input-processors = <&zip_temp_layer 5 10000>;
 
     };
 };
