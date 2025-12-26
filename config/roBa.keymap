@@ -149,13 +149,6 @@
             label = "parenthesis";
         };
 
-        to_layer_2: to_layer_3 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 2 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_3";
-        };
-
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -190,6 +183,13 @@
                 <&macro_tap>;
 
             label = "MO_exit_AML";
+        };
+
+        parenthesisJP: parenthesisJP {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
+            label = "PARENTHESISJP";
         };
     };
 
@@ -259,10 +259,10 @@
 
         default_layer {
             bindings = <
-&mt ESCAPE Q                      &kp W             &kp E                        &kp R                             &kp T                                                                        &kp Y        &kp U  &lt 5 I    &kp O    &mt MINUS P
-&mt_exit_AML_on_tap LC(A) A       &mt LC(S) S       &kp D                        &kp F                             &kp G                         &kp LS(LG(S))                   &parenthesis   &kp H        &kp J  &kp K      &lt 5 L  &lt 5 ENTER
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X             &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V       &kp B                         &kp SEMICOLON                   &kp APOS       &kp N        &kp M  &kp COMMA  &kp DOT  &mt EXCLAMATION SLASH
-&kp LEFT_CONTROL                  &kp LEFT_COMMAND  &kp LEFT_ALT                 &lt_exit_AML_on_hold 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 ESC      &kp BACKSPACE  &lt 2 ENTER                             &kp DEL
+&mt_exit_AML_on_tap ESCAPE Q      &kp W                        &kp E                        &kp R                             &kp T                                                                         &kp Y                         &kp U  &lt 5 I    &kp O    &mt_exit_AML_on_tap MINUS P
+&mt_exit_AML_on_tap LC(A) A       &mt_exit_AML_on_tap LC(S) S  &kp D                        &kp F                             &kp G                         &kp LS(LG(S))                   &parenthesisJP  &kp H                         &kp J  &kp K      &kp L    &lt 5 ENTER
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V       &kp B                         &kp SEMICOLON                   &kp APOS        &kp N                         &kp M  &kp COMMA  &kp DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
+&kp LEFT_CONTROL                  &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML_on_hold 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 ESC      &kp BACKSPACE   &lt_exit_AML_on_hold 2 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -270,10 +270,10 @@
 
         FUNCTION {
             bindings = <
-&kp F9  &kp F10  &kp F11  &kp F12  &trans                                    &kp CARET       &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp HASH
-&kp F1  &kp F2   &kp F3   &kp F4   &trans  &trans      &kp NON_US_BACKSLASH  &kp DOLLAR      &kp AT_SIGN    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp QUESTION
-&kp F5  &kp F6   &kp F7   &kp F8   &trans  &trans      &kp PIPE              &kp UNDERSCORE  &kp MINUS      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp EXCLAMATION
-&trans  &trans   &trans   &trans   &trans  &trans      &trans                &trans                                                                      &trans
+&kp F9  &kp F10  &kp F11  &kp F12  &trans                                        &kp CARET       &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp HASH
+&kp F1  &kp F2   &kp F3   &kp F4   &trans  &kp C_MUTE      &kp NON_US_BACKSLASH  &kp DOLLAR      &kp AT_SIGN    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp QUESTION
+&kp F5  &kp F6   &kp F7   &kp F8   &trans  &trans          &kp PIPE              &kp UNDERSCORE  &kp MINUS      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp EXCLAMATION
+&trans  &trans   &trans   &trans   &trans  &trans          &trans                &trans                                                                      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
