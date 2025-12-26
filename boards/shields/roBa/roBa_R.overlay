@@ -2,7 +2,7 @@
 #include <input/processors.dtsi>
 
 &zip_temp_layer {
-    require-prior-idle-ms = <200>;
+    require-prior-idle-ms = <100>;
 };
 
 &default_transform {
