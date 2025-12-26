@@ -13,7 +13,7 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
-    tapping-term-ms = <900>;
+    tapping-term-ms = <1500>;
 };
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 5 250>; };
@@ -77,11 +77,6 @@
         bt3 {
             bindings = <&bt BT_SEL 3>;
             key-positions = <26 42>;
-        };
-
-        esc {
-            bindings = <&kp ESC>;
-            key-positions = <1 0>;
         };
 
         backspace {
