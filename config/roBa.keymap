@@ -59,26 +59,6 @@
             key-positions = <24 25>;
         };
 
-        bt0 {
-            bindings = <&bt BT_SEL 0>;
-            key-positions = <26 9>;
-        };
-
-        bt1 {
-            bindings = <&bt BT_SEL 1>;
-            key-positions = <26 21>;
-        };
-
-        bt2 {
-            bindings = <&bt BT_SEL 2>;
-            key-positions = <26 33>;
-        };
-
-        bt3 {
-            bindings = <&bt BT_SEL 3>;
-            key-positions = <26 42>;
-        };
-
         backspace {
             bindings = <&kp LS(BACKSPACE)>;
             key-positions = <19 20>;
