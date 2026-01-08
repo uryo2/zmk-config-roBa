@@ -59,11 +59,6 @@
             key-positions = <24 25>;
         };
 
-        migiR {
-            bindings = <&kp RIGHT>;
-            key-positions = <19 20>;
-        };
-
         hidariL {
             bindings = <&kp LEFT_ARROW>;
             key-positions = <11 12>;
@@ -96,21 +91,6 @@
             bindings = <&mkp MB3>;
             key-positions = <19 18 20>;
             layers = <4>;
-        };
-
-        hidariR {
-            bindings = <&kp LEFT>;
-            key-positions = <19 18>;
-        };
-
-        shitaR {
-            bindings = <&kp DOWN_ARROW>;
-            key-positions = <30 32 31>;
-        };
-
-        ueR {
-            bindings = <&kp UP_ARROW>;
-            key-positions = <6 7 8>;
         };
 
         ueL {
@@ -315,10 +295,10 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &kp LEFT_CONTROL  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &kp UP_ARROW    &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &kp DOWN_ARROW  &kp LEFT_CONTROL  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans          &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                              &trans
             >;
         };
 
