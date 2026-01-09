@@ -270,7 +270,7 @@
             bindings = <
 &mt_exit_AML_on_tap ESCAPE Q  &kp W                        &kp E                        &kp R                             &kp T                                                                             &kp Y                         &kp U  &kp I                          &kp O                              &mt_exit_AML_on_tap MINUS P
 &mt_exit_AML_on_tap LC(A) A   &mt_exit_AML_on_tap LC(S) S  &kp D                        &kp F                             &kp G                         &kp LS(LG(S))                   &doubledoublequote  &kp H                         &kp J  &kp K                          &kp L                              &lt 5 EQUAL
-&mt LEFT_SHIFT Z              &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V       &lt_exit_AML_on_hold 6 B      &kp SEMICOLON                   &parenthesisJP      &kp N                         &kp M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
+&mt LEFT_SHIFT Z              &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V       &lt_exit_AML_on_hold 6 B      &kp SEMICOLON                   &parenthesisJP      &lt_exit_AML_on_hold 6 N      &kp M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
 &kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML_on_hold 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 ESC      &kp BACKSPACE       &lt_exit_AML_on_hold 2 ENTER                                                                           &tog 4
             >;
 
