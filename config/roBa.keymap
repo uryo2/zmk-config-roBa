@@ -19,7 +19,7 @@
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 5000>; };
 
 &trackball {
-    automouse-layer = <4>;
+    automouse-layer = <0>;
     scroll-layers = <5>;
 
     // arrows {
