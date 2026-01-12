@@ -76,20 +76,20 @@
         };
 
         mb4 {
-            bindings = <&mkp MB4>;
+            bindings = <&mkp MB3>;
             key-positions = <18 19>;
             layers = <4>;
         };
 
         mb5 {
             bindings = <&mkp MB5>;
-            key-positions = <19 20>;
+            key-positions = <6 7>;
             layers = <4>;
         };
 
         mb3 {
-            bindings = <&mkp MB3>;
-            key-positions = <19 18 20>;
+            bindings = <&mkp MB4>;
+            key-positions = <30 31>;
             layers = <4>;
         };
 
@@ -269,9 +269,9 @@
         default_layer {
             bindings = <
 &mt_exit_AML_on_tap ESCAPE Q  &kp W                        &kp E                        &kp R                             &kp T                                                                             &kp Y                         &kp U  &kp I                          &kp O                              &mt_exit_AML_on_tap MINUS P
-&mt_exit_AML_on_tap LC(A) A   &mt_exit_AML_on_tap LC(S) S  &kp D                        &kp F                             &kp G                         &kp LS(LG(S))                   &doubledoublequote  &kp H                         &kp J  &kp K                          &kp L                              &lt 5 EQUAL
+&mt_exit_AML_on_tap LC(A) A   &mt_exit_AML_on_tap LC(S) S  &kp D                        &kp F                             &kp G                         &kp LS(LG(S))                   &doubledoublequote  &kp H                         &kp J  &kp K                          &lt 4 L                            &lt 5 EQUAL
 &mt LEFT_SHIFT Z              &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V       &lt_exit_AML_on_hold 6 B      &kp SEMICOLON                   &parenthesisJP      &lt_exit_AML_on_hold 6 N      &kp M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
-&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML_on_hold 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 ESC      &kp BACKSPACE       &lt_exit_AML_on_hold 2 ENTER                                                                           &tog 4
+&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML_on_hold 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 ESC      &kp BACKSPACE       &lt_exit_AML_on_hold 2 ENTER                                                                           &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -310,10 +310,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans                    &trans                                                                &trans  &trans             &trans             &trans             &trans
-&trans  &trans  &trans  &trans                    &trans                        &trans                          &trans  &trans  &mkp_exit_AML MB1  &mkp_exit_AML MB3  &mkp_exit_AML MB2  &mo 5
-&trans  &trans  &trans  &trans                    &trans                        &trans                          &trans  &trans  &trans             &trans             &trans             &trans
-&trans  &trans  &trans  &lt_exit_AML 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 ESC      &trans  &trans                                                           &trans
+&trans  &trans  &trans  &trans                    &trans                                                                &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &trans                    &trans                        &trans                          &trans  &trans  &mkp MB1  &mkp MB2  &trans  &mo 5
+&trans  &trans  &trans  &trans                    &trans                        &trans                          &trans  &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &lt_exit_AML 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 ESC      &trans  &trans                              &trans
             >;
         };
 
