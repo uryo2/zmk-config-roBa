@@ -13,7 +13,7 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
-    tapping-term-ms = <500>;
+    tapping-term-ms = <400>;
 };
 
 // &mkp_input_listener { input-processors = <&zip_temp_layer 4 5000>; };
@@ -41,12 +41,7 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <0 1 2>;
-        };
-
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <10 11 12>;
+            key-positions = <0 1>;
         };
 
         double_quotation {
@@ -56,7 +51,7 @@
 
         eq {
             bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
+            key-positions = <>;
         };
 
         hidariL {
@@ -69,10 +64,10 @@
             key-positions = <12 13>;
         };
 
-        zero {
+        zero1 {
             bindings = <&kp KP_NUMBER_0>;
-            key-positions = <30 32 31>;
-            layers = <2 4>;
+            key-positions = <30 31 32>;
+            layers = <2>;
         };
 
         mb4 {
@@ -95,12 +90,18 @@
 
         ueL {
             bindings = <&kp UP_ARROW>;
-            key-positions = <1 2 3>;
+            key-positions = <2 1 3>;
         };
 
         shitaL {
             bindings = <&kp DOWN_ARROW>;
-            key-positions = <23 24 25>;
+            key-positions = <24 23 25>;
+        };
+
+        zero2 {
+            bindings = <&kp KP_NUMBER_0>;
+            key-positions = <18 19 20>;
+            layers = <2>;
         };
     };
 
@@ -256,7 +257,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MTZEROPOINT";
             #binding-cells = <2>;
-            tapping-term-ms = <500>;
+            tapping-term-ms = <400>;
             flavor = "balanced";
             quick-tap-ms = <200>;
             bindings = <&zeropoint>, <&kp>;
@@ -268,10 +269,10 @@
 
         default_layer {
             bindings = <
-&mt_exit_AML_on_tap ESCAPE Q  &kp W                        &kp E                        &kp R                             &kp T                                                                             &kp Y                         &kp U  &kp I                          &kp O                              &mt_exit_AML_on_tap MINUS P
-&mt_exit_AML_on_tap LC(A) A   &mt_exit_AML_on_tap LC(S) S  &kp D                        &kp F                             &kp G                         &kp LS(LG(S))                   &doubledoublequote  &kp H                         &kp J  &kp K                          &lt 4 L                            &lt 5 EQUAL
-&mt LEFT_SHIFT Z              &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V       &lt_exit_AML_on_hold 6 B      &kp SEMICOLON                   &parenthesisJP      &lt_exit_AML_on_hold 6 N      &kp M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
-&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML_on_hold 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 ESC      &kp BACKSPACE       &lt_exit_AML_on_hold 2 ENTER                                                                           &kp DEL
+&mt ESCAPE Q      &kp W             &kp E         &kp R            &kp T                                                 &kp Y        &kp U  &kp I          &kp O              &mt MINUS P
+&mt LEFT_SHIFT A  &mt LC(S) S       &kp D         &kp F            &kp G        &kp LS(LG(S))        &doubledoublequote  &kp H        &kp J  &kp K          &lt 4 L            &lt 5 EQUAL
+&mt LEFT_SHIFT Z  &mt LC(X) X       &mt LC(C) C   &mt LC(V) V      &lt 6 B      &kp ESCAPE           &parenthesisJP      &lt 6 N      &kp M  &mt SQT COMMA  &mt SEMICOLON DOT  &mt EXCLAMATION SLASH
+&kp LEFT_CONTROL  &kp LEFT_COMMAND  &kp LEFT_ALT  &lt 3 LC(SPACE)  &lt 2 SPACE  &lt 1 LS(SPACE)      &kp BACKSPACE       &lt 2 ENTER                                           &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -290,19 +291,19 @@
 
         NUM {
             bindings = <
-&mt_exit_AML_on_tap UNDERSCORE MINUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt_exit_AML_on_tap NON_US_BACKSLASH SLASH                                       &mt_exit_AML_on_tap MINUS MINUS     &kp KP_N7        &kp KP_N8  &kp KP_N9  &mt_exit_AML_on_tap NON_US_BACKSLASH SLASH
-&mt_exit_AML_on_tap AMPERSAND PLUS    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK                                &kp KP_NLCK      &kp KP_NUMLOCK      &mt_exit_AML_on_tap AMPERSAND PLUS  &kp KP_NUMBER_4  &kp KP_N5  &kp KP_N6  &kp ASTERISK
-&mt LEFT_SHIFT KP_NUMBER_0            &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &mt AT_SIGN PERIOD                          &kp EQUAL        &mt AT_SIGN PERIOD  &mtzeropoint 0 KP_NUMBER_0          &kp KP_NUMBER_1  &kp KP_N2  &kp KP_N3  &kp EQUAL
-&trans                                &trans           &trans           &trans           &trans                                      &trans           &trans              &trans                                                                     &kp EQUAL
+&mt NON_US_BACKSLASH SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt UNDERSCORE MINUS                                       &mt_exit_AML_on_tap NON_US_BACKSLASH SLASH  &kp KP_N7        &kp KP_N8  &kp KP_N9  &mt UNDERSCORE MINUS
+&kp ASTERISK                &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt AMPERSAND PLUS    &kp KP_NLCK      &kp KP_NUMLOCK      &kp ASTERISK                                &kp KP_NUMBER_4  &kp KP_N5  &kp KP_N6  &mt AMPERSAND PLUS
+&mtzeropoint 0 KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &mt AT_SIGN PERIOD    &kp EQUAL        &mt AT_SIGN PERIOD  &mtzeropoint 0 KP_NUMBER_0                  &kp KP_NUMBER_1  &kp KP_N2  &kp KP_N3  &kp EQUAL
+&trans                      &trans           &trans           &trans           &trans                &trans           &trans              &trans                                                                             &kp EQUAL
             >;
         };
 
         ARROW_symbols {
             bindings = <
-&kp TAB          &kp LC(LS(TAB))                                &mt_exit_AML_on_tap LC(UP_ARROW) UP_ARROW      &kp LC(TAB)                                      &mt_exit_AML_on_tap LS(RC(HOME)) HOME                                    &kp CARET   &kp AMPERSAND                                  &mt_exit_AML_on_tap LC(UP_ARROW) UP_ARROW      &kp RIGHT_BRACKET                                &kp HASH
-&kp LS(LC(TAB))  &mt_exit_AML_on_tap LC(LEFT_ARROW) LEFT_ARROW  &mt_exit_AML_on_tap LC(DOWN_ARROW) DOWN_ARROW  &mt_exit_AML_on_tap LC(RIGHT_ARROW) RIGHT_ARROW  &mt_exit_AML_on_tap LS(RC(END)) END    &trans      &kp NON_US_BACKSLASH  &kp DOLLAR  &mt_exit_AML_on_tap LC(LEFT_ARROW) LEFT_ARROW  &mt_exit_AML_on_tap LC(DOWN_ARROW) DOWN_ARROW  &mt_exit_AML_on_tap LC(RIGHT_ARROW) RIGHT_ARROW  &kp QUESTION
-&trans           &kp LG(LS(LEFT_ARROW))                         &trans                                         &kp LG(LS(RIGHT_ARROW))                          &trans                                 &trans      &kp PIPE              &kp EQUAL   &kp MINUS                                      &kp LEFT_BRACE                                 &kp RIGHT_BRACE                                  &kp EXCLAMATION
-&trans           &trans                                         &trans                                         &trans                                           &trans                                 &trans      &kp DELETE            &trans                                                                                                                                                     &trans
+&kp TAB          &kp LC(LS(TAB))                &mt LC(UP_ARROW) UP_ARROW      &kp LC(TAB)                      &mt LS(RC(HOME)) HOME                                    &kp CARET   &kp AMPERSAND                  &mt LC(UP_ARROW) UP_ARROW      &kp RIGHT_BRACKET                &kp HASH
+&kp LS(LC(TAB))  &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &mt LS(RC(END)) END    &trans      &kp NON_US_BACKSLASH  &kp DOLLAR  &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &kp QUESTION
+&trans           &kp LG(LS(LEFT_ARROW))         &trans                         &kp LG(LS(RIGHT_ARROW))          &trans                 &trans      &kp PIPE              &kp EQUAL   &kp MINUS                      &kp LEFT_BRACE                 &kp RIGHT_BRACE                  &kp EXCLAMATION
+&trans           &trans                         &trans                         &trans                           &trans                 &trans      &kp DELETE            &trans                                                                                                     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -310,10 +311,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans                    &trans                                                                &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans                    &trans                        &trans                          &trans  &trans  &mkp MB1  &mkp MB2  &trans  &mo 5
-&trans  &trans  &trans  &trans                    &trans                        &trans                          &trans  &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &lt_exit_AML 3 LC(SPACE)  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 ESC      &trans  &trans                              &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp LC(C)  &kp LC(V)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1   &mkp MB2   &trans  &mo 5
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
 
