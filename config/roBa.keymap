@@ -300,10 +300,10 @@
 
         ARROW_symbols {
             bindings = <
-&kp TAB          &kp LC(LS(TAB))                &mt LC(UP_ARROW) UP_ARROW      &kp LC(TAB)                      &mt LS(RC(HOME)) HOME                                    &kp CARET   &kp AMPERSAND                  &mt LC(UP_ARROW) UP_ARROW      &kp RIGHT_BRACKET                &kp HASH
-&kp LS(LC(TAB))  &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &mt LS(RC(END)) END    &trans      &kp NON_US_BACKSLASH  &kp DOLLAR  &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &kp QUESTION
-&trans           &kp LG(LS(LEFT_ARROW))         &trans                         &kp LG(LS(RIGHT_ARROW))          &trans                 &trans      &kp PIPE              &kp EQUAL   &kp MINUS                      &kp LEFT_BRACE                 &kp RIGHT_BRACE                  &kp EXCLAMATION
-&trans           &trans                         &trans                         &trans                           &trans                 &trans      &kp DELETE            &trans                                                                                                     &trans
+&kp TAB  &kp LC(LS(TAB))                &mt LC(UP_ARROW) UP_ARROW      &kp LC(TAB)                      &mt LS(RC(HOME)) HOME                                    &kp CARET   &kp AMPERSAND                  &mt LC(UP_ARROW) UP_ARROW      &kp RIGHT_BRACKET                &kp HASH
+&trans   &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &mt LS(RC(END)) END    &trans      &kp NON_US_BACKSLASH  &kp DOLLAR  &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &kp QUESTION
+&trans   &kp LG(LS(LEFT_ARROW))         &trans                         &kp LG(LS(RIGHT_ARROW))          &trans                 &trans      &kp PIPE              &kp EQUAL   &kp MINUS                      &kp LEFT_BRACE                 &kp RIGHT_BRACE                  &kp EXCLAMATION
+&trans   &trans                         &trans                         &trans                           &trans                 &trans      &kp DELETE            &trans                                                                                                     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
