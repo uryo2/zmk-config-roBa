@@ -313,8 +313,8 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &kp LC(C)  &kp LC(C)  &kp LC(V)  &kp LC(V)          &mo 5
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans     &mkp MB1   &mkp MB3   &mkp_exit_AML MB2  &mo 5
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans     &trans     &trans     &trans             &mo 5
-&trans  &trans  &trans  &mo 3   &mo 2   &mo 1       &trans  &mo 3                                               &mo 3
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans     &trans     &trans     &mo 5              &mo 5
+&trans  &trans  &trans  &mo 3   &mo 2   &mo 1       &trans  &mo 3                                               &mo 4
             >;
         };
 
@@ -322,7 +322,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans            &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &kp LEFT_CONTROL  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &mo 5             &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans            &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mo 3                                       &trans
             >;
         };
