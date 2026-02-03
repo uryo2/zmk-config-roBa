@@ -189,61 +189,6 @@
 
     };
 
-       alt_layer_combo: alt_layer_combo {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings =
-                <&macro_param_1to1>,
-                <&macro_press>,
-                <&mo MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_param_1to1>,
-                <&macro_release>,
-                <&mo MACRO_PLACEHOLDER>,
-                <&macro_release>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp RGUI>;
-   // ダメ押しの空打ち（これでOS側がAlt解除を認識しやすくなります）
-        };
-
-        alt_tab: alt_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LALT>, <&macro_tap>, <&kp TAB>;
-        };
-
-        alt_shift_tab: alt_shift_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LALT>, <&macro_tap>, <&kp LS(TAB)>;
-        };
-
-        // Altを離すためだけの短いマクロ
-        // Altを離すためだけのマクロ
-
-        release_alt: release_alt {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_release>, <&kp LALT>;
-        };
-
-        // ホールドでレイヤー、離した時にAlt解除
-
-        mo_alt_rel: mo_alt_rel {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings =
-                <&macro_param_1to1>,
-                <&macro_press>,
-                <&mo MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_param_1to1>,
-                <&macro_release>,
-                <&mo MACRO_PLACEHOLDER>,
-                <&macro_release>,
-                <&kp LALT>;
- // ここで直接Altを解除する
         };
 
     behaviors {
