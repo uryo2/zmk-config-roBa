@@ -345,7 +345,7 @@
 &trans   &trans                         &trans                         &mo 3                            &mo 2                  &mo 1       &kp DELETE            &trans                                                                                                     &trans
             >;
 
-            sensor-bindings = <&rot_tab>;
+            sensor-bindings = <&sensor_rotate_key_press alt_tab alt_shift_tab>;
         };
 
         MOUSE {
