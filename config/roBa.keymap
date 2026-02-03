@@ -187,47 +187,61 @@
             label = "REPOINT";
         };
 
-alt_layer_combo: alt_layer_combo {
+        alt_layer_combo: alt_layer_combo {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings
-                = <&macro_param_1to1 &macro_press &mo MACRO_PLACEHOLDER>
-                , <&macro_pause_for_release>
-                , <&macro_param_1to1 &macro_release &mo MACRO_PLACEHOLDER>
-                , <&macro_release &kp LALT> // ここで確実にAltを離す
-                , <&macro_tap &kp RGUI>;   // ダメ押しの空打ち（これでOS側がAlt解除を認識しやすくなります）
+            bindings =
+                <&macro_param_1to1>,
+                <&macro_press>,
+                <&mo MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_param_1to1>,
+                <&macro_release>,
+                <&mo MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp RGUI>;
+   // ダメ押しの空打ち（これでOS側がAlt解除を認識しやすくなります）
         };
 
         alt_tab: alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp TAB>;
+            bindings = <&macro_press>, <&kp LALT>, <&macro_tap>, <&kp TAB>;
         };
 
         alt_shift_tab: alt_shift_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp LS(TAB)>;
+            bindings = <&macro_press>, <&kp LALT>, <&macro_tap>, <&kp LS(TAB)>;
         };
 
         // Altを離すためだけの短いマクロ
+        // Altを離すためだけのマクロ
 
-// Altを離すためだけのマクロ
         release_alt: release_alt {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release &kp LALT>;
+            bindings = <&macro_release>, <&kp LALT>;
         };
 
         // ホールドでレイヤー、離した時にAlt解除
+
         mo_alt_rel: mo_alt_rel {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings
-                = <&macro_param_1to1 &macro_press &mo MACRO_PLACEHOLDER>
-                , <&macro_pause_for_release>
-                , <&macro_param_1to1 &macro_release &mo MACRO_PLACEHOLDER>
-                , <&macro_release &kp LALT>; // ここで直接Altを解除する
+            bindings =
+                <&macro_param_1to1>,
+                <&macro_press>,
+                <&mo MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_param_1to1>,
+                <&macro_release>,
+                <&mo MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LALT>;
+ // ここで直接Altを解除する
         };
     };
 
@@ -348,13 +362,15 @@ alt_layer_combo: alt_layer_combo {
 
         // Alt解除機能付きのカスタムLT
 
-lt_alt: lt_alt {
+        lt_alt: lt_alt {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_ALT";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
+
             // ホールド時に「レイヤー3」と「Alt解除」を同時に呼ぶ特別なマクロを指定
+
             bindings = <&alt_layer_combo>, <&kp>;
         };
     };
@@ -364,10 +380,10 @@ lt_alt: lt_alt {
 
         default_layer {
             bindings = <
-&mt ESCAPE Q      &kp W             &kp E         &kp R                &kp T                                                         &kp Y        &kp U  &kp I          &kp O              &mt MINUS P
-&mt LEFT_SHIFT A  &mt LC(S) S       &kp D         &kp F                &kp G        &kp LS(LG(S))        &parenthesisdoulequote 0 0  &kp H        &kp J  &kp K          &lt 4 L            &lt 5 EQUAL
-&mt LEFT_SHIFT Z  &mt LC(X) X       &mt LC(C) C   &mt LC(V) V          &kp B        &lt 6 ESCAPE         &lt 6 ESC                   &kp N        &kp M  &mt SQT COMMA  &mt SEMICOLON DOT  &mt EXCLAMATION SLASH
-&kp LEFT_CONTROL  &kp LEFT_COMMAND  &kp LEFT_ALT  &lt_alt 3 LC(SPACE)  &lt 2 SPACE  &lt 1 LS(SPACE)      &kp BACKSPACE               &lt 3 ENTER                                           &mo 4
+&mt ESCAPE Q      &kp W             &kp E         &kp R            &kp T                                                         &kp Y        &kp U  &kp I          &kp O              &mt MINUS P
+&mt LEFT_SHIFT A  &mt LC(S) S       &kp D         &kp F            &kp G        &kp LS(LG(S))        &parenthesisdoulequote 0 0  &kp H        &kp J  &kp K          &lt 4 L            &lt 5 EQUAL
+&mt LEFT_SHIFT Z  &mt LC(X) X       &mt LC(C) C   &mt LC(V) V      &kp B        &lt 6 ESCAPE         &lt 6 ESC                   &kp N        &kp M  &mt SQT COMMA  &mt SEMICOLON DOT  &mt EXCLAMATION SLASH
+&kp LEFT_CONTROL  &kp LEFT_COMMAND  &kp LEFT_ALT  &lt 3 LC(SPACE)  &lt 2 SPACE  &lt 1 LS(SPACE)      &kp BACKSPACE               &lt 3 ENTER                                           &mo 4
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -400,8 +416,6 @@ lt_alt: lt_alt {
 &trans   &alt_shift_tab                 &kp LA(DOWN_ARROW)             &alt_tab                         &trans                 &trans      &kp PIPE              &kp EQUAL   &kp MINUS                      &kp LEFT_BRACE                 &kp RIGHT_BRACE                  &kp EXCLAMATION
 &trans   &trans                         &trans                         &mo 3                            &mo 2                  &mo 1       &kp DELETE            &trans                                                                                                     &trans
             >;
-
-            sensor-bindings = <&rot_tab_macro>;
         };
 
         MOUSE {
