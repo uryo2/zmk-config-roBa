@@ -5,7 +5,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING
-#undef ZMK_POINTING_DEFAULT_SCRL_VAL
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 4
 #define SCROLL 5
@@ -346,7 +345,6 @@
 &trans   &trans                         &trans                         &mo 3                            &mo 2                  &mo 1       &kp DELETE            &trans                                                                                                     &trans
             >;
 
-            sensor-bindings = <&sensor_rotate_key_press &alt_tab &alt_shift_tab>;
         };
 
         MOUSE {
