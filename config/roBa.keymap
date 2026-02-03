@@ -199,11 +199,7 @@ alt_shift_tab: alt_shift_tab {
             bindings = <&macro_press &kp LALT>, <&macro_tap &kp LS(TAB)>;
         };
 
-release_alt: release_alt {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&macro_release &kp LALT>;
-};
+
 
 // Altを離すためだけの短いマクロ
         release_alt: release_alt {
