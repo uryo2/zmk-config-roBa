@@ -198,6 +198,12 @@
             #binding-cells = <0>;
             bindings = <&macro_press>, <&kp LALT>, <&macro_tap>, <&kp LS(TAB)>;
         };
+
+release_alt: release_alt {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_release &kp LALT>;
+};
     };
 
     behaviors {
@@ -288,6 +294,27 @@
             quick-tap-ms = <200>;
             bindings = <&doubledoublequote>, <&parenthesisJP>;
         };
+
+mo_alt: mo_alt {
+    compatible = "zmk,behavior-hold-tap";
+    label = "MO_ALT";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <200>;
+    bindings = <&mo_with_alt_release>, <&kp>;
+};
+
+// マクロセクションに追加（レイヤーを離した時にrelease_altを呼ぶ）
+mo_with_alt_release: mo_with_alt_release {
+    compatible = "zmk,behavior-macro-one-param";
+    #binding-cells = <1>;
+    bindings
+        = <&macro_param_1to1 &macro_press &mo MACRO_PLACEHOLDER>
+        , <&macro_pause_for_release>
+        , <&macro_param_1to1 &macro_release &mo MACRO_PLACEHOLDER>
+        , <&macro_tap &release_alt>;
+};
+
     };
 
     keymap {
