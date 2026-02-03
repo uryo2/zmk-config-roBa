@@ -229,7 +229,8 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kt LALT>, <&kt LALT>;
- // 回し始めにAltを固定（簡易版）
+
+            // 回し始めにAltを固定（簡易版）
         };
 
         lt_to_layer_0: lt_to_layer_0 {
@@ -344,7 +345,7 @@
 &trans   &trans                         &trans                         &mo 3                            &mo 2                  &mo 1       &kp DELETE            &trans                                                                                                     &trans
             >;
 
-            sensor-bindings = <&sensor_rotate_key_press alt_tab alt_shift_tab>;
+            sensor-bindings = <&rot_tab>;
         };
 
         MOUSE {
