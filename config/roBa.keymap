@@ -187,16 +187,16 @@
             label = "REPOINT";
         };
 
-alt_tab: alt_tab {
+        alt_tab: alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp TAB>;
+            bindings = <&macro_press>, <&kp LALT>, <&macro_tap>, <&kp TAB>;
         };
 
         alt_shift_tab: alt_shift_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp LS(TAB)>;
+            bindings = <&macro_press>, <&kp LALT>, <&macro_tap>, <&kp LS(TAB)>;
         };
     };
 
@@ -211,10 +211,11 @@ alt_tab: alt_tab {
             tap-ms = <20>;
         };
 
-rot_tab_macro: rot_tab_macro {
+        rot_tab_macro: rot_tab_macro {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&alt_tab>, <&alt_shift_tab>;
+
             // これにより、回した瞬間にAltがロックされ、
             // 物理的にレイヤーキーを離すとAltが解除される仕組みが必要です
         };
@@ -327,11 +328,12 @@ rot_tab_macro: rot_tab_macro {
             bindings = <
 &kp TAB  &kp LC(LS(TAB))                &mt LC(UP_ARROW) UP_ARROW      &kp LC(TAB)                      &mt LS(RC(HOME)) HOME                                    &kp CARET   &kp AMPERSAND                  &mt LC(UP_ARROW) UP_ARROW      &kp RIGHT_BRACKET                &kp HASH
 &trans   &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &mt LS(RC(END)) END    &trans      &kp NON_US_BACKSLASH  &kp DOLLAR  &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &kp QUESTION
-&trans   &kp LG(LS(LEFT_ARROW))         &kp LA(DOWN_ARROW)             &kp LG(LS(RIGHT_ARROW))          &trans                 &trans      &kp PIPE              &kp EQUAL   &kp MINUS                      &kp LEFT_BRACE                 &kp RIGHT_BRACE                  &kp EXCLAMATION
+&trans   &alt_shift_tab                 &kp LA(DOWN_ARROW)             &alt_tab                         &trans                 &trans      &kp PIPE              &kp EQUAL   &kp MINUS                      &kp LEFT_BRACE                 &kp RIGHT_BRACE                  &kp EXCLAMATION
 &trans   &trans                         &trans                         &mo 3                            &mo 2                  &mo 1       &kp DELETE            &trans                                                                                                     &trans
             >;
-sensor-bindings = <&rot_tab_macro>;
-};
+
+            sensor-bindings = <&rot_tab_macro>;
+        };
 
         MOUSE {
             bindings = <
