@@ -187,16 +187,27 @@
             label = "REPOINT";
         };
 
+alt_layer_combo: alt_layer_combo {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_param_1to1 &macro_press &mo MACRO_PLACEHOLDER>
+                , <&macro_pause_for_release>
+                , <&macro_param_1to1 &macro_release &mo MACRO_PLACEHOLDER>
+                , <&macro_release &kp LALT> // ここで確実にAltを離す
+                , <&macro_tap &kp RGUI>;   // ダメ押しの空打ち（これでOS側がAlt解除を認識しやすくなります）
+        };
+
         alt_tab: alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LALT>, <&macro_tap>, <&kp TAB>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp TAB>;
         };
 
         alt_shift_tab: alt_shift_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LALT>, <&macro_tap>, <&kp LS(TAB)>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp LS(TAB)>;
         };
 
         // Altを離すためだけの短いマクロ
@@ -337,17 +348,14 @@
 
         // Alt解除機能付きのカスタムLT
 
-        lt_alt: lt_alt {
+lt_alt: lt_alt {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_ALT";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-
-            // ホールド時にマクロ(mo_alt_rel)を呼び出し、タップ時にキーを送る
-
-            bindings = <&mo_alt_rel>, <&kp>;
+            // ホールド時に「レイヤー3」と「Alt解除」を同時に呼ぶ特別なマクロを指定
+            bindings = <&alt_layer_combo>, <&kp>;
         };
     };
 
