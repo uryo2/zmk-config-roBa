@@ -186,6 +186,26 @@
             bindings = <&kp N0 &kp PERIOD>;
             label = "REPOINT";
         };
+
+         alt_tab: alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp TAB>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp LALT>;
+        };
+        alt_shift_tab: alt_shift_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp LS(TAB)>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp LALT>;
+        };
+
     };
 
     behaviors {
@@ -197,6 +217,13 @@
             // 追加: スクロールのタップ時間を設定 (20ms)
 
             tap-ms = <20>;
+        };
+
+
+        rot_tab: encoder_alt_tab {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kt LALT>, <&kt LALT>; // 回し始めにAltを固定（簡易版）
         };
 
         lt_to_layer_0: lt_to_layer_0 {
