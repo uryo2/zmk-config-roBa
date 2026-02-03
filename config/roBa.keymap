@@ -340,7 +340,7 @@
             >;
 
 sensor-bindings = <&sensor_rotate_key_press &alt_tab &alt_shift_tab>;
-        };
+};
 
         MOUSE {
             bindings = <
