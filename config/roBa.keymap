@@ -451,3 +451,13 @@
     };
 };
 
+
+&trackball_input_listener {
+    input-processors = <&zip_mouse_gesture>;
+};
+
+&zip_mouse_gesture {
+    bindings = <&kp LA(LEFT)>, <&kp LA(RIGHT)>;
+    exit-threshold = <100>;
+};
+
