@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
+#include <mouse-gesture.dtsi>   /* kot149 モジュール */
 
 / {
     chosen {
@@ -113,8 +114,13 @@
     };
 
     trackball_listener: trackball_listener {
+        //compatible = "zmk,input-listener";
+        //status = "disabled";
+        status = "okay";
         compatible = "zmk,input-listener";
-        status = "disabled";
+        device = <&trackball>;
+        input-processors = <&zip_mouse_gesture &zip_xy_scaler 1 1>;
+
     };
 };
 
