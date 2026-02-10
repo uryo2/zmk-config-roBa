@@ -20,7 +20,7 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
+input-processors = <&zip_mouse_gesture &zip_xy_scaler 0 1>;
     };
 };
 
