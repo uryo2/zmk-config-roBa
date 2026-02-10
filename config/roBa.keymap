@@ -451,6 +451,6 @@
     };
 };
 
-&trackball_input_listener {
+&mkp_input_listener {
     input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
 };
