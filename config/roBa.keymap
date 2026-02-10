@@ -23,7 +23,6 @@
 &trackball {
     automouse-layer = <0>;
     scroll-layers = <5>;
-input-processors = <&zip_mouse_gesture>;
 
     // arrows {
     //     layers = <3>;
