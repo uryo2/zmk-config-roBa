@@ -450,23 +450,3 @@
         };
     };
 };
-
-/* &trackball_input_listener ではなく &vtrackball_input_listener に変更 */
-&vtrackball_input_listener {
-    input-processors = <&zip_mouse_gesture>;
-};
-
-/* あなたが組み込みたい L7 の設定をここに反映 */
-&zip_mouse_gesture {
-    enable-eager-mode;
-    stroke-size = <5>;
-    movement-threshold = <6>;
-    idle-timeout-ms = <100>;
-    gesture-cooldown-ms = <120>;
-
-    /* 2026年現在のZMK/モジュール仕様に基づき、子ノード形式で記述 */
-    prev_tab    { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(LS(TAB))>; };
-    next_tab    { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(TAB)>;     };
-    Create_tab  { pattern = <GESTURE_UP>;    bindings = <&kp LC(T)>;       };
-    close_tab   { pattern = <GESTURE_DOWN>;  bindings = <&kp LC(W)>;       };
-};
