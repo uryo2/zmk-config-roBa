@@ -23,6 +23,7 @@
 &trackball {
     automouse-layer = <0>;
     scroll-layers = <5>;
+input-processors = <&zip_mouse_gesture>;
 
     // arrows {
     //     layers = <3>;
@@ -451,7 +452,3 @@
     };
 };
 
-&trackball {
-    // 既存のセンサー処理にジェスチャーを割り込ませる
-    input-processors = <&zip_mouse_gesture>;
-};
