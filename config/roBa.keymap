@@ -451,10 +451,13 @@
     };
 };
 
+
+/* roBa.keymap の末尾 */
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_mouse_gesture>;
+        /* scalerを先に、gestureを後にしてみる（あるいは両方の順序を試す） */
+        input-processors = <&zip_xy_scaler 1 1>, <&zip_mouse_gesture>;
     };
 };
