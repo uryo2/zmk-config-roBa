@@ -450,3 +450,8 @@
         };
     };
 };
+
+&trackball {
+    // 既存のセンサー処理にジェスチャーを割り込ませる
+    input-processors = <&zip_mouse_gesture>;
+};
