@@ -55,10 +55,12 @@
         down   { pattern = <3>; bindings = <&kp D>; }; // GESTURE_DOWN = 3
     };
 
+/* リスナーの設定 */
     gesture_trackball_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&trackball>;
+        device = <&trackball>; // ←ここがマウス移動の主役と同じか確認
+        /* スケーラーの「前」にジェスチャーを置く */
         input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
     };
 };
@@ -100,4 +102,12 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
+};
+
+
+/* 既存のリスナーを名指しで捕まえて、中身をジェスチャー用に改造する */
+&trackball_listener {
+    status = "okay";
+    /* device = ... は既存の設定を引き継ぐので書かなくてOK */
+    input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
 };
