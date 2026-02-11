@@ -1,13 +1,13 @@
 &zip_mouse_gesture {
     enable-eager-mode;
-    stroke-size = <30>;          /* 30ピクセル分くらいの移動を1つの線として見る */
-    movement-threshold = <20>;   /* 20ピクセル以上動いたら「弾いた」とみなす */
-    idle-timeout-ms = <100>;     /* 止まったらすぐ判定 */
+    stroke-size = <15>;           /* 15ピクセル分動いたら1つの線とする */
+    movement-threshold = <10>;    /* 10ピクセル以上の速い動きで開始 */
+    idle-timeout-ms = <50>;       /* 判定を早く締め切る */
     gesture-cooldown-ms = <100>;
 
-    /* テストのため、確実に分かりやすい文字を割り当て */
-    prev_tab    { pattern = <GESTURE_LEFT>;  bindings = <&kp A>; };
-    next_tab    { pattern = <GESTURE_RIGHT>; bindings = <&kp B>; };
-    Create_tab  { pattern = <GESTURE_UP>;    bindings = <&kp C>; };
-    close_tab   { pattern = <GESTURE_DOWN>;  bindings = <&kp D>; };
+    /* 全方向に単純なキーを割り当て */
+    left   { pattern = <GESTURE_LEFT>;  bindings = <&kp A>; };
+    right  { pattern = <GESTURE_RIGHT>; bindings = <&kp B>; };
+    up     { pattern = <GESTURE_UP>;    bindings = <&kp C>; };
+    down   { pattern = <GESTURE_DOWN>;  bindings = <&kp D>; };
 };
