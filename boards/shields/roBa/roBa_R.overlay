@@ -1,5 +1,5 @@
 #include "roBa.dtsi"
-//#include <mouse-gesture.dtsi>   /* kot149 モジュール */
+#include <mouse-gesture.dtsi>   /* kot149 モジュール */
 
 &default_transform {
     col-offset = <6>;
@@ -20,7 +20,7 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-//input-processors = <&zip_mouse_gesture &zip_xy_scaler 1 1>;
+input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;  // ← コンマ区切りに修正して有効化
     };
 };
 
