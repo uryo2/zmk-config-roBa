@@ -1,13 +1,13 @@
 &zip_mouse_gesture {
     enable-eager-mode;
-    stroke-size = <1>;          /* 最小値：判定を極限まで短く */
-    movement-threshold = <1>;   /* 最小値：わずかな動きでジェスチャー開始 */
-    idle-timeout-ms = <200>;    /* 少し余裕を持たせる */
+    stroke-size = <30>;          /* 30ピクセル分くらいの移動を1つの線として見る */
+    movement-threshold = <20>;   /* 20ピクセル以上動いたら「弾いた」とみなす */
+    idle-timeout-ms = <100>;     /* 止まったらすぐ判定 */
     gesture-cooldown-ms = <100>;
 
-    /* 確実にわかるように、単独のキー（AやBなど）を割り当ててメモ帳でテストするのもアリです */
-    prev_tab    { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(LS(TAB))>; };
-    next_tab    { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(TAB)>;     };
-    Create_tab  { pattern = <GESTURE_UP>;    bindings = <&kp LC(T)>;       };
-    close_tab   { pattern = <GESTURE_DOWN>;  bindings = <&kp LC(W)>;       };
+    /* テストのため、確実に分かりやすい文字を割り当て */
+    prev_tab    { pattern = <GESTURE_LEFT>;  bindings = <&kp A>; };
+    next_tab    { pattern = <GESTURE_RIGHT>; bindings = <&kp B>; };
+    Create_tab  { pattern = <GESTURE_UP>;    bindings = <&kp C>; };
+    close_tab   { pattern = <GESTURE_DOWN>;  bindings = <&kp D>; };
 };
