@@ -1,5 +1,6 @@
 #include "roBa.dtsi"
 #include <mouse-gesture.dtsi>   /* kot149 モジュール */
+#include <dt-bindings/zmk/mouse_gesture.h>
 
 &default_transform {
     col-offset = <6>;
