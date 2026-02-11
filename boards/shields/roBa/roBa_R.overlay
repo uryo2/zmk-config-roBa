@@ -59,7 +59,7 @@
     gesture_trackball_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&pmw3610>; // ←ここがマウス移動の主役と同じか確認
+        device = <&trackball>; // ←ここがマウス移動の主役と同じか確認
         /* スケーラーの「前」にジェスチャーを置く */
         input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
     };
