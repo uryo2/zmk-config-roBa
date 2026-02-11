@@ -5,22 +5,49 @@
     col-offset = <6>;
 };
 
+//&kscan0 {
+  //      col-gpios
+    //        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+      //      , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+      //      , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+      //      , <&xiao_d 7 GPIO_ACTIVE_HIGH>
+      //      , <&gpio0 10 GPIO_ACTIVE_HIGH>
+      //      ;
+//};
+//
+/// {
+//    trackball_listener {
+//        status = "okay";
+//        compatible = "zmk,input-listener";
+//        device = <&trackball>;
+//input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;  // ← コンマ区切りに修正して有効化
+//    };
+//};
+//
+
 &kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH>
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
+    col-gpios
+        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 7 GPIO_ACTIVE_HIGH>
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        ;
 };
 
+/* ジェスチャー判定ノードをここで定義 */
 / {
-    trackball_listener {
-        status = "okay";
+    zip_mouse_gesture: zip_mouse_gesture {
+        compatible = "zmk,mouse-gesture-input-processor";
+        #input-processor-cells = <0>;
+    };
+
+    /* リスナー名を固有にして確実に上書きを防ぐ */
+    gesture_trackball_listener {
         compatible = "zmk,input-listener";
+        status = "okay";
         device = <&trackball>;
-input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;  // ← コンマ区切りに修正して有効化
+        input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
     };
 };
 
