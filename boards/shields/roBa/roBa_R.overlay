@@ -35,19 +35,34 @@
         ;
 };
 
-/* ジェスチャー判定ノードをここで定義 */
 / {
+    /* ジェスチャー判定の実体 */
     zip_mouse_gesture: zip_mouse_gesture {
         compatible = "zmk,mouse-gesture-input-processor";
         #input-processor-cells = <0>;
+        status = "okay";
+        enable-eager-mode;
+        
+        /* 確実に反応させるためのガバガバ設定 */
+        stroke-size = <10>;
+        movement-threshold = <5>;
+        idle-timeout-ms = <500>;
+        gesture-cooldown-ms = <100>;
+
+        /* テスト用に文字を割り当て */
+        left   { pattern = <GESTURE_LEFT>;  bindings = <&kp A>; };
+        right  { pattern = <GESTURE_RIGHT>; bindings = <&kp B>; };
+        up     { pattern = <GESTURE_UP>;    bindings = <&kp C>; };
+        down   { pattern = <GESTURE_DOWN>;  bindings = <&kp D>; };
     };
 
-    /* リスナー名を固有にして確実に上書きを防ぐ */
+    /* リスナーで呼び出し */
     gesture_trackball_listener {
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball>;
-input-processors = <&zip_xy_scaler 1 1>, <&zip_mouse_gesture>;
+        /* ジェスチャー判定を先に通し、残った信号をマウス移動としてスケーラーに渡す */
+        input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
     };
 };
 
