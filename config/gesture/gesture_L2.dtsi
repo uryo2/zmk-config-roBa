@@ -14,9 +14,9 @@
         #input-processor-cells = <0>;
         enable-eager-mode;
         
-        // 感度設定（鈍くする）
-        stroke-size = <400>;
-        movement-threshold = <50>;
+        // 感度設定（少し反応しやすく）
+        stroke-size = <280>;
+        movement-threshold = <40>;
         idle-timeout-ms = <100>;
         gesture-cooldown-ms = <120>;
 

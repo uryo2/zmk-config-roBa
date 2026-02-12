@@ -3,8 +3,8 @@
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
         enable-eager-mode;
-        stroke-size = <400>;
-        movement-threshold = <50>;
+        stroke-size = <280>;
+        movement-threshold = <40>;
         idle-timeout-ms = <100>;
         gesture-cooldown-ms = <120>;
 
