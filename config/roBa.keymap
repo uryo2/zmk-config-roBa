@@ -38,6 +38,14 @@
 };
 
 / {
+    layer_listeners {
+        compatible = "zmk,layer-listeners";
+        
+        mouse_layer_gesture {
+            layers = <4>;  // MOUSEレイヤー（layer 4）
+            bindings = <&mouse_gesture_on>, <&mouse_gesture_off>;
+        };
+    };
     combos {
         compatible = "zmk,combos";
 
