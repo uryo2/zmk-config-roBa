@@ -51,16 +51,7 @@
             bindings = <&mouse_gesture_on>, <&mouse_gesture_off>;
         };
     };
-    &trackball_listener {
-        layer-2 {
-            layers = <2>;
-            input-processors = <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 1>;
-        };
-        layer-3 {
-            layers = <3>;
-            input-processors = <&zip_mouse_gesture_l3>, <&zip_xy_scaler 1 1>;
-        };
-    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -475,3 +466,14 @@
 };
 
 
+
+&trackball_listener {
+    layer-2 {
+        layers = <2>;
+        input-processors = <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 1>;
+    };
+    layer-3 {
+        layers = <3>;
+        input-processors = <&zip_mouse_gesture_l3>, <&zip_xy_scaler 1 1>;
+    };
+};
