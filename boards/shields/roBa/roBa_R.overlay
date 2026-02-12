@@ -1,30 +1,8 @@
 #include "roBa.dtsi"
-#include <mouse-gesture.dtsi>   /* kot149 モジュール */
-#include <dt-bindings/zmk/keys.h>
 
 &default_transform {
     col-offset = <6>;
 };
-
-//&kscan0 {
-  //      col-gpios
-    //        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-      //      , <&xiao_d 9 GPIO_ACTIVE_HIGH>
-      //      , <&xiao_d 8 GPIO_ACTIVE_HIGH>
-      //      , <&xiao_d 7 GPIO_ACTIVE_HIGH>
-      //      , <&gpio0 10 GPIO_ACTIVE_HIGH>
-      //      ;
-//};
-//
-/// {
-//    trackball_listener {
-//        status = "okay";
-//        compatible = "zmk,input-listener";
-//        device = <&trackball>;
-//input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;  // ← コンマ区切りに修正して有効化
-//    };
-//};
-//
 
 &kscan0 {
     col-gpios
@@ -36,35 +14,11 @@
         ;
 };
 
-/ {
-    zip_mouse_gesture: zip_mouse_gesture {
-        compatible = "zmk,mouse-gesture-input-processor";
-        #input-processor-cells = <0>;
-        status = "okay";
-        enable-eager-mode;
-        
-        stroke-size = <10>;
-        movement-threshold = <5>;
-        idle-timeout-ms = <500>;
-        gesture-cooldown-ms = <100>;
-
-        /* マクロがエラーになるなら数字に直接置き換え */
-        left   { pattern = <0>; bindings = <&kp A>; }; // GESTURE_LEFT = 0
-        right  { pattern = <1>; bindings = <&kp B>; }; // GESTURE_RIGHT = 1
-        up     { pattern = <2>; bindings = <&kp C>; }; // GESTURE_UP = 2
-        down   { pattern = <3>; bindings = <&kp D>; }; // GESTURE_DOWN = 3
-    };
-
-/* リスナーの設定 */
-    gesture_trackball_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&trackball>; // ←ここがマウス移動の主役と同じか確認
-        /* スケーラーの「前」にジェスチャーを置く */
-        input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
-    };
+// 既存のtrackball_listenerを有効化
+&trackball_listener {
+    status = "okay";
+    input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
 };
-
 
 &pinctrl {
     spi0_default: spi0_default {
