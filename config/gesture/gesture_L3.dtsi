@@ -1,3 +1,4 @@
+/ {
     macros {
         alt_tab_press: alt_tab_press {
             compatible = "zmk,behavior-macro";
