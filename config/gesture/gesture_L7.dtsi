@@ -1,7 +1,7 @@
 &zip_mouse_gesture {
     enable-eager-mode;
-    stroke-size = <100>;         // 増加: より大きな動きが必要（デフォルト: 200）
-    movement-threshold = <20>;   // 増加: より速い動きが必要（デフォルト: 10）
+    stroke-size = <150>;         // より大きな動きが必要（デフォルト: 200）
+    movement-threshold = <30>;   // より速い動きが必要（デフォルト: 10）
     idle-timeout-ms = <100>;
     gesture-cooldown-ms = <120>;
 
