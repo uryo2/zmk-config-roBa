@@ -1,4 +1,16 @@
-/ {
+    macros {
+        alt_tab_press: alt_tab_press {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp TAB>;
+        };
+        alt_shift_tab_press: alt_shift_tab_press {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp LS(TAB)>;
+        };
+    };
+
     zip_mouse_gesture_l3: zip_mouse_gesture_l3 {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
@@ -8,8 +20,8 @@
         idle-timeout-ms = <100>;
         gesture-cooldown-ms = <120>;
 
-        vdesk_prev       { pattern = <GESTURE_LEFT>;  bindings = <&kp LA(LS(TAB))>; };
-        vdesk_next       { pattern = <GESTURE_RIGHT>; bindings = <&kp LA(TAB)>; };
+        vdesk_prev       { pattern = <GESTURE_LEFT>;  bindings = <&alt_shift_tab_press>; };
+        vdesk_next       { pattern = <GESTURE_RIGHT>; bindings = <&alt_tab_press>; };
         task_view        { pattern = <GESTURE_UP>;    bindings = <&kp F5>; };
     };
 };

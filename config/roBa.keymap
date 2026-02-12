@@ -53,7 +53,7 @@
         
         arrow_layer_gesture {
             layers = <3>;  // ARROW_symbolsレイヤー（layer 3）
-            bindings = <&mouse_gesture_on>, <&mouse_gesture_off>;
+            bindings = <&mouse_gesture_on>, <&l3_exit>;
         };
         
         mouse_layer_gesture {
@@ -254,6 +254,12 @@
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&macro_release>, <&kp LALT>;
+    };
+
+    l3_exit: l3_exit {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&mouse_gesture_off>, <&release_alt>;
     };
 
     // ホールドでレイヤー、離した時にAlt解除
