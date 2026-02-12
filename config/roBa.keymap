@@ -40,9 +40,6 @@
 };
 
 / {
-
-
-
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
@@ -50,19 +47,17 @@
             layers = <2>;
             bindings = <&mouse_gesture_on>, <&mouse_gesture_off>;
         };
-        
+
         arrow_layer_gesture {
             layers = <3>;  // ARROW_symbolsレイヤー（layer 3）
             bindings = <&mouse_gesture_on>, <&l3_exit>;
         };
-        
+
         mouse_layer_gesture {
             layers = <4>;  // MOUSEレイヤー（layer 4）
             bindings = <&mouse_gesture_on>, <&mouse_gesture_off>;
         };
     };
-
-
 
     combos {
         compatible = "zmk,combos";
@@ -259,7 +254,7 @@
     l3_exit: l3_exit {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&mouse_gesture_off>, <&release_alt>;
+        bindings = <&mouse_gesture_off &release_alt>;
     };
 
     // ホールドでレイヤー、離した時にAlt解除
@@ -456,10 +451,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &kp LC(C)    &kp LC(C)  &mkp MB2   &kp LC(V)  &mo 5
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans       &mkp MB1   &mkp MB2   &trans     &mo 5
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans       &kp LC(C)  &kp LC(V)  &mo 5      &mo 5
-&trans  &trans  &trans  &mo 3   &mo 2   &mo 1       &trans  &lt 3 ENTER                                   &mo 4
+&trans  &trans  &trans  &trans  &trans                      &kp LC(C)    &kp LC(C)  &mkp MB2  &trans  &mo 5
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans       &mkp MB1   &mkp MB2  &trans  &mo 5
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp LC(V)    &kp LC(C)  &trans    &mo 5   &mo 5
+&trans  &trans  &trans  &mo 3   &mo 2   &mo 1       &trans  &lt 3 ENTER                               &mo 4
             >;
         };
 
@@ -480,20 +475,56 @@
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
         };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        layer_9 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        layer_10 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
     };
 };
-
-
 
 &trackball_listener {
     layer-2 {
         layers = <2>;
         input-processors = <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 1>;
     };
+
     layer-3 {
         layers = <3>;
         input-processors = <&zip_mouse_gesture_l3>, <&zip_xy_scaler 1 1>;
     };
+
     layer-4 {
         layers = <4>;
         input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
