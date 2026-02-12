@@ -457,7 +457,6 @@
 
 
 &trackball_listener {
-    input-processors = <&zip_xy_scaler 1 1>;
     layer-3 {
         layers = <3>;
         input-processors = <&zip_mouse_gesture_l3>, <&zip_xy_scaler 1 1>;
