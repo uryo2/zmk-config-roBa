@@ -17,7 +17,7 @@
 // 既存のtrackball_listenerを有効化してジェスチャープロセッサーを接続
 &trackball_listener {
     status = "okay";
-    input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
+    input-processors = <&zip_xy_scaler 1 1>;
 };
 
 &pinctrl {
