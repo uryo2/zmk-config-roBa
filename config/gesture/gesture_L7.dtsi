@@ -1,37 +1,12 @@
-/ {
-    behaviors {
-        gest_left: gest_left {
-            compatible = "zmk,behavior-mouse-gesture";
-            #binding-cells = <0>;
-            patterns = <GESTURE_LEFT>;
-            bindings = <&kp A>;
-        };
-        gest_right: gest_right {
-            compatible = "zmk,behavior-mouse-gesture";
-            #binding-cells = <0>;
-            patterns = <GESTURE_RIGHT>;
-            bindings = <&kp B>;
-        };
-        gest_up: gest_up {
-            compatible = "zmk,behavior-mouse-gesture";
-            #binding-cells = <0>;
-            patterns = <GESTURE_UP>;
-            bindings = <&kp C>;
-        };
-        gest_down: gest_down {
-            compatible = "zmk,behavior-mouse-gesture";
-            #binding-cells = <0>;
-            patterns = <GESTURE_DOWN>;
-            bindings = <&kp D>;
-        };
-    };
-};
-
 &zip_mouse_gesture {
     enable-eager-mode;
     stroke-size = <5>;
     movement-threshold = <6>;
     idle-timeout-ms = <100>;
     gesture-cooldown-ms = <120>;
-    bindings = <&gest_left>, <&gest_right>, <&gest_up>, <&gest_down>;
+
+    left  { pattern = <GESTURE_LEFT>;  bindings = <&kp A>; };
+    right { pattern = <GESTURE_RIGHT>; bindings = <&kp B>; };
+    up    { pattern = <GESTURE_UP>;    bindings = <&kp C>; };
+    down  { pattern = <GESTURE_DOWN>;  bindings = <&kp D>; };
 };
