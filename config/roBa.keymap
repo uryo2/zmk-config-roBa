@@ -39,19 +39,7 @@
 };
 
 / {
-    layer_listeners {
-        compatible = "zmk,layer-listeners";
-        
-        arrow_layer_gesture {
-            layers = <3>;  // ARROW_symbolsレイヤー（layer 3）
-            bindings = <&mouse_gesture_on>, <&mouse_gesture_off>;
-        };
-        
-        mouse_layer_gesture {
-            layers = <4>;  // MOUSEレイヤー（layer 4）
-            bindings = <&mouse_gesture_on>, <&mouse_gesture_off>;
-        };
-    };
+
 
     combos {
         compatible = "zmk,combos";
@@ -469,8 +457,13 @@
 
 
 &trackball_listener {
+    input-processors = <&zip_xy_scaler 1 1>;
     layer-3 {
         layers = <3>;
         input-processors = <&zip_mouse_gesture_l3>, <&zip_xy_scaler 1 1>;
+    };
+    layer-4 {
+        layers = <4>;
+        input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
     };
 };
