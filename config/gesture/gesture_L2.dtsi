@@ -1,0 +1,29 @@
+/*
+ * Layer 2 Mouse Gestures
+ *
+ * Bindings:
+ * - UP:    LC(L)  (Focus URL bar)
+ * - DOWN:  LG(S)  (Save / Screenshot?)
+ * - LEFT:  LEFT   (Arrow Left)
+ * - RIGHT: LG(T)  (New Tab)
+ */
+
+/ {
+    zip_mouse_gesture_l2: zip_mouse_gesture_l2 {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        enable-eager-mode;
+        
+        // 感度設定（L3/L4と統一）
+        stroke-size = <150>;
+        movement-threshold = <30>;
+        idle-timeout-ms = <100>;
+        gesture-cooldown-ms = <120>;
+
+        // ユーザー指定のバインディング
+        focus_url        { pattern = <GESTURE_UP>;    bindings = <&kp LC(L)>; };
+        vdesk_send_next  { pattern = <GESTURE_DOWN>;  bindings = <&kp LG(S)>; };
+        taskbar_prev     { pattern = <GESTURE_LEFT>;  bindings = <&kp LEFT>; };
+        taskbar_next     { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(T)>; };
+    };
+};
