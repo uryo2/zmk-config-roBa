@@ -3,14 +3,13 @@
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
         enable-eager-mode;
-        stroke-size = <150>;
-        movement-threshold = <30>;
+        stroke-size = <400>;
+        movement-threshold = <50>;
         idle-timeout-ms = <100>;
         gesture-cooldown-ms = <120>;
 
-        vdesk_prev       { pattern = <GESTURE_LEFT>;  bindings = <&kp LG(LC(LEFT))>; };     // 前の仮想デスクトップ
-        vdesk_next       { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(LC(RIGHT))>; };    // 次の仮想デスクトップ
-        task_view        { pattern = <GESTURE_UP>;    bindings = <&kp LG(TAB)>; };          // タスクビュー
-        vdesk_send_next  { pattern = <GESTURE_DOWN>;  bindings = <&kp LG(LC(LS(RIGHT)))>; }; // ウィンドウを次のデスクトップへ
+        vdesk_prev       { pattern = <GESTURE_LEFT>;  bindings = <&kp LA(LS(TAB))>; };
+        vdesk_next       { pattern = <GESTURE_RIGHT>; bindings = <&kp LA(TAB)>; };
+        task_view        { pattern = <GESTURE_UP>;    bindings = <&kp F5>; };
     };
 };
