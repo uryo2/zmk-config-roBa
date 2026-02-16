@@ -405,21 +405,6 @@
             bindings = <&alt_layer_combo>, <&kp>;
         };
 
-// J/K専用のクリック用Hold-Tap設定
-        jk_click: jk_click {
-            compatible = "zmk,behavior-hold-tap";
-            label = "JK_CLICK";
-            #binding-cells = <2>;
-            
-            flavor = "tap-preferred";    // 基本は文字入力を優先
-            tapping-term-ms = <200>;     // 長押しの判定時間（適宜調整）
-            quick-tap-ms = <200>;        // ドラッグ・ダブルクリックの安定化
-            require-prior-idle-ms = <150>;// タイピング中の誤クリック防止
-            retro-tap = <true>;          // 他のキーを押さずに離せば必ず文字入力
-            
-            bindings = <&mkp>, <&kp>;    // ホールドでマウスボタン, タップでキー
-        };
-
     };
 
     keymap {
