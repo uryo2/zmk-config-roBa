@@ -20,10 +20,10 @@
     tapping-term-ms = <300>;
 };
 
-//&mkp_input_listener { input-processors = <&zip_temp_layer 4 5000>; };
+&mkp_input_listener { input-processors = <&zip_temp_layer 4 5000>; };
 
 &trackball {
-    automouse-layer = <0>;
+    automouse-layer = <4>;
     scroll-layers = <5>;
 
     // arrows {
