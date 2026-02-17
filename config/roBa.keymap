@@ -375,6 +375,16 @@
             bindings = <&mkp>, <&kp_exit_AML>; // Holdでクリック、Tapで文字+解除
         };
 
+lt_exit_l4: lt_exit_l4 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_EXIT_L4";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            // カンマなし。&mo と &tog_off を並べるだけ。
+            bindings = <&mo>, <&tog_off>; 
+        };
+
 mtzeropoint: mtzeropoint {
             compatible = "zmk,behavior-hold-tap";
             label = "MTZEROPOINT";
