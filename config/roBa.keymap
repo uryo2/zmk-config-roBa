@@ -9,7 +9,8 @@
 #include "gesture/gesture_L7.dtsi"
 
 #define ZMK_POINTING
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 700
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 40
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
