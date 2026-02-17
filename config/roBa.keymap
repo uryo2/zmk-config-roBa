@@ -26,6 +26,14 @@
     automouse-layer = <4>;
     scroll-layers = <5>;
 
+    automouse-threshold = <16>;
+    automouse-delay-ms = <160>;
+    automouse-timeout-ms = <1400>;
+    automouse-debounce-ms = <110>;
+
+
+
+
     // arrows {
     //     layers = <3>;
     //     bindings =
