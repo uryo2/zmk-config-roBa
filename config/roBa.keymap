@@ -79,15 +79,7 @@
             key-positions = <20 21>;
         };
 
-        hidariL {
-            bindings = <&kp LEFT_ARROW>;
-            key-positions = <>;
-        };
 
-        migiL {
-            bindings = <&kp RIGHT_ARROW>;
-            key-positions = <>;
-        };
 
         zero1 {
             bindings = <&kp KP_NUMBER_0>;
@@ -113,15 +105,7 @@
             layers = <3>;
         };
 
-        ueL {
-            bindings = <&kp UP_ARROW>;
-            key-positions = <>;
-        };
 
-        shitaL {
-            bindings = <&kp DOWN_ARROW>;
-            key-positions = <>;
-        };
 
         zero2 {
             bindings = <&kp KP_NUMBER_0>;
