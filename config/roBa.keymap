@@ -98,19 +98,19 @@
         mb4 {
             bindings = <&mkp MB3>;
             key-positions = <18 19>;
-            layers = <4>;
+            layers = <1>;
         };
 
         mb5 {
             bindings = <&mkp MB5>;
             key-positions = <6 7>;
-            layers = <4>;
+            layers = <1>;
         };
 
         mb3 {
             bindings = <&mkp MB4>;
             key-positions = <30 31>;
-            layers = <4>;
+            layers = <1>;
         };
 
         ueL {
@@ -461,10 +461,9 @@
 &mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                 &kp_exit_AML Y  &kp_exit_AML U  &kp_exit_AML I                 &kp_exit_AML O                     &mt_exit_AML_on_tap MINUS P
 &mt_exit_AML_on_tap LSHIFT A  &mt_exit_AML_on_tap LC(S) S  &kp_exit_AML D               &mo 7                        &kp_exit_AML G  &kp LS(LG(S))      &parenthesisdoulequote 0 0  &kp_exit_AML H  &mkp MB1        &mkp MB2                       &kp_exit_AML L                     &mo 6
 &mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B  &lt 6 ESCAPE       &lt 6 ESC                   &kp_exit_AML N  &kp_exit_AML M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
-&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML 9 LC(SPACE)     &mo_exit_AML 2  &mo 1              &kp BACKSPACE               &lt 8 ENTER                                                                                       &mo 7
+&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML 3 LC(SPACE)     &mo_exit_AML 2  &mo 1              &kp BACKSPACE               &lt 8 ENTER                                                                                       &mo 7
             >;
         };
-
 
         NUM {
             bindings = <
@@ -484,7 +483,6 @@
             >;
         };
 
-
         FUNCTION {
             bindings = <
 &kp F12  &kp F7  &kp F8  &kp F9  &trans                                        &kp CARET       &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp HASH
@@ -495,8 +493,6 @@
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
-
-
 
         SCROLL {
             bindings = <
