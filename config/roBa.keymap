@@ -22,12 +22,12 @@
 };
 
 //クリックした後ミリ秒後にAMLが解除
+
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 300>; };
 
 //キー入力から一定時間はAMLを発動しない
-&zip_temp_layer {
-    require-prior-idle-ms = <150>;
-};
+
+&zip_temp_layer { require-prior-idle-ms = <150>; };
 
 &trackball {
     automouse-layer = <4>;
@@ -464,10 +464,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &kp LC(C)    &kp LC(C)  &mkp MB2  &trans  &mo 5
-&trans  &trans  &trans  &mo 7   &trans  &trans      &trans  &trans       &mkp MB1   &mkp MB2  &trans  &mo 5
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp LC(V)    &kp LC(C)  &trans    &mo 5   &mo 5
-&trans  &trans  &trans  &mo 3   &mo 2   &mo 1       &trans  &lt 8 ENTER                               &mo 4
+&trans  &trans  &trans  &trans  &trans                      &trans       &kp LC(C)  &kp LC(V)  &trans  &mo 5
+&trans  &trans  &trans  &mo 7   &trans  &trans      &trans  &trans       &mkp MB1   &mkp MB2   &trans  &mo 5
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans       &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &mo 3   &mo 2   &mo 1       &trans  &lt 8 ENTER                                &mo 7
             >;
         };
 
@@ -510,7 +510,6 @@
 };
 
 &trackball_listener {
-
     smaller_dpi {
         layers = <7>;
         input-processors = <&zip_xy_scaler 1 5>;
@@ -530,7 +529,4 @@
         layers = <4>;
         input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
     };
-
-
-
 };
