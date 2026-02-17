@@ -92,7 +92,7 @@
         zero1 {
             bindings = <&kp KP_NUMBER_0>;
             key-positions = <30 31 32>;
-            layers = <2 3>;
+            layers = <2 3 9 10>;
         };
 
         mb4 {
@@ -126,13 +126,13 @@
         zero2 {
             bindings = <&kp KP_NUMBER_0>;
             key-positions = <18 19 20>;
-            layers = <2 3>;
+            layers = <2 3 9 10>;
         };
 
         zero3 {
             bindings = <&kp KP_NUMBER_0>;
             key-positions = <6 7 8>;
-            layers = <2 3>;
+            layers = <2 3 9 10>;
         };
     };
 
