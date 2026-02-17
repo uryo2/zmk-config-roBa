@@ -184,16 +184,18 @@
             label = "KP_exit_AML";
         };
 
-mo_exit_AML: mo_exit_AML {
+        mo_exit_AML: mo_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
                 <&macro_press>,
-                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>, // 先にL3をONにする
+                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>, // 指を離したらL3をOFFにする
-                <&macro_tap &exit_AML>;                   // 最後にL4を消す
+                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&exit_AML>;
+                   // 最後にL4を消す
             label = "MO_exit_AML";
         };
 
@@ -355,32 +357,33 @@ mo_exit_AML: mo_exit_AML {
 
         // JとK専用の特別な判定
 
-jk_click: jk_click {
+        jk_click: jk_click {
             compatible = "zmk,behavior-hold-tap";
             label = "JK_CLICK";
             #binding-cells = <2>;
+
             // 1. 判定時間を少し短くして、文字入力への復帰を早める
-            tapping-term-ms = <150>; 
-            
+
+            tapping-term-ms = <150>;
+
             // 2. ダブルクリックを可能にする（超重要）
             // 前回クリックしてから150ms以内に叩けば、判定を飛ばして即クリックする
+
             quick-tap-ms = <150>;
-            
+
             // 3. flavor を「hold-preferred」に変更
             // これにより、押した瞬間に「他のキーが押されれば」即クリック、
             // 何もなくても150ms経てば即クリックになります。
-            flavor = "hold-preferred"; 
-            
+
+            flavor = "hold-preferred";
             bindings = <&mkp>, <&kp_exit_AML>;
         };
-
-
 
         lt_exit_l4: lt_exit_l4 {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_EXIT_L4";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             flavor = "hold-preferred";
 
             // カンマなし。&mo と &tog_off を並べるだけ。
@@ -482,10 +485,10 @@ jk_click: jk_click {
 
         MOUSE {
             bindings = <
-&mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                    &kp_exit_AML Y  &kp_exit_AML U   &kp_exit_AML I                 &kp_exit_AML O                     &mt_exit_AML_on_tap MINUS P
-&mt_exit_AML_on_tap LSHIFT A  &mt_exit_AML_on_tap LC(S) S  &kp_exit_AML D               &mo 7                        &kp_exit_AML G   &kp LS(LG(S))        &parenthesisdoulequote 0 0  &kp_exit_AML H  &jk_click MB1 J  &jk_click MB2 K                &kp_exit_AML L                     &mo 5
-&mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B   &lt 6 ESCAPE         &lt 6 ESC                   &kp_exit_AML N  &kp_exit_AML M   &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
-&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_l4 3 4              &lt_exit_l4 2 4  &lt_exit_l4 1 4      &kp BACKSPACE               &lt 8 ENTER                                                                                        &mo 7
+&mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                    &kp_exit_AML Y  &kp_exit_AML U  &kp_exit_AML I                 &kp_exit_AML O                     &mt_exit_AML_on_tap MINUS P
+&mt_exit_AML_on_tap LSHIFT A  &mt_exit_AML_on_tap LC(S) S  &kp_exit_AML D               &mo 7                        &kp_exit_AML G   &kp LS(LG(S))        &parenthesisdoulequote 0 0  &kp_exit_AML H  &mkp MB1        &mkp MB2                       &kp_exit_AML L                     &mo 5
+&mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B   &lt 6 ESCAPE         &lt 6 ESC                   &kp_exit_AML N  &kp_exit_AML M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
+&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_l4 3 4              &lt_exit_l4 2 4  &lt_exit_l4 1 4      &kp BACKSPACE               &lt 8 ENTER                                                                                       &mo 7
             >;
         };
 
