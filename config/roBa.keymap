@@ -487,10 +487,10 @@
 
         MOUSE {
             bindings = <
-&mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                   &kp_exit_AML Y  &kp_exit_AML U  &kp_exit_AML I                 &kp_exit_AML O                     &mt_exit_AML_on_tap MINUS P
-&mt_exit_AML_on_tap LSHIFT A  &mt_exit_AML_on_tap LC(S) S  &kp_exit_AML D               &mo 7                        &kp_exit_AML G  &kp LS(LG(S))        &parenthesisdoulequote 0 0  &kp_exit_AML H  &mkp MB1        &mkp MB2                       &kp_exit_AML L                     &mo 5
-&mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B  &lt 6 ESCAPE         &lt 6 ESC                   &kp_exit_AML N  &kp_exit_AML M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
-&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML 3 LC(SPACE)     &mo_exit_AML 2  &lt_exit_l4 1 4      &kp BACKSPACE               &lt 8 ENTER                                                                                       &mo 7
+&mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                 &kp_exit_AML Y  &kp_exit_AML U  &kp_exit_AML I                 &kp_exit_AML O                     &mt_exit_AML_on_tap MINUS P
+&mt_exit_AML_on_tap LSHIFT A  &mt_exit_AML_on_tap LC(S) S  &kp_exit_AML D               &mo 7                        &kp_exit_AML G  &kp LS(LG(S))      &parenthesisdoulequote 0 0  &kp_exit_AML H  &mkp MB1        &mkp MB2                       &kp_exit_AML L                     &mo 6
+&mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B  &lt 6 ESCAPE       &lt 6 ESC                   &kp_exit_AML N  &kp_exit_AML M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
+&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML 9 LC(SPACE)     &mo_exit_AML 2  &mo 1              &kp BACKSPACE               &lt 8 ENTER                                                                                       &mo 7
             >;
         };
 
@@ -527,6 +527,15 @@
 &trans   &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &mt LS(RC(END)) END    &trans      &kp NON_US_BACKSLASH  &kp DOLLAR  &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &kp QUESTION
 &trans   &trans                         &kp LA(DOWN_ARROW)             &trans                           &trans                 &trans      &kp PIPE              &kp EQUAL   &kp MINUS                      &kp LEFT_BRACE                 &kp RIGHT_BRACE                  &kp EXCLAMATION
 &trans   &trans                         &trans                         &mo 3                            &mo 2                  &mo 1       &kp DELETE            &trans                                                                                                     &trans
+            >;
+        };
+
+        layer_9 {
+            bindings = <
+&kp TAB  &kp LC(LS(TAB))                &mt LC(UP_ARROW) UP_ARROW      &kp LC(TAB)                      &mt LS(RC(HOME)) HOME                              &mt PERCENT KP_SLASH           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt UNDERSCORE MINUS
+&trans   &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &mt LS(RC(END)) END    &trans      &kp KP_NUMLOCK  &mt NON_US_BACKSLASH ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt AMPERSAND PLUS
+&trans   &trans                         &kp LA(DOWN_ARROW)             &trans                           &trans                 &trans      &mt AT PERIOD   &mtzeropoint 0 KP_N0           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL
+&trans   &trans                         &trans                         &mo 3                            &mo 2                  &mo 1       &kp DELETE      &trans                                                                            &trans
             >;
         };
     };
