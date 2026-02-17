@@ -358,34 +358,38 @@
             flavor = "balanced";
         };
 
-// JとK専用の特別な判定
+        // JとK専用の特別な判定
+
         jk_click: jk_click {
             compatible = "zmk,behavior-hold-tap";
             label = "JK_CLICK";
             #binding-cells = <2>;
-            tapping-term-ms = <200>; 
+            tapping-term-ms = <200>;
             quick-tap-ms = <200>;
-            
+
             /* ここが肝：
                他の操作（ボール移動や他キー）が割り込まない限り、
                「文字入力(Tap)」を優先する設定 
             */
-            flavor = "tap-unless-interrupted"; 
-            
-            bindings = <&mkp>, <&kp_exit_AML>; // Holdでクリック、Tapで文字+解除
+
+            flavor = "tap-unless-interrupted";
+            bindings = <&mkp>, <&kp_exit_AML>;
+ // Holdでクリック、Tapで文字+解除
         };
 
-lt_exit_l4: lt_exit_l4 {
+        lt_exit_l4: lt_exit_l4 {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_EXIT_L4";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
+
             // カンマなし。&mo と &tog_off を並べるだけ。
-            bindings = <&mo>, <&tog_off>; 
+
+            bindings = <&mo>, <&tog_off>;
         };
 
-mtzeropoint: mtzeropoint {
+        mtzeropoint: mtzeropoint {
             compatible = "zmk,behavior-hold-tap";
             label = "MTZEROPOINT";
             #binding-cells = <2>;
@@ -432,18 +436,6 @@ mtzeropoint: mtzeropoint {
         };
 
         // Alt解除機能付きのカスタムLT
-
-        lt_alt: lt_alt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_ALT";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-
-            // ホールド時に「レイヤー3」と「Alt解除」を同時に呼ぶ特別なマクロを指定
-
-            bindings = <&alt_layer_combo>, <&kp>;
-        };
     };
 
     keymap {
@@ -491,10 +483,10 @@ mtzeropoint: mtzeropoint {
 
         MOUSE {
             bindings = <
-&mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                 &kp_exit_AML Y  &kp_exit_AML U  &kp_exit_AML I                 &kp_exit_AML O                     &mt_exit_AML_on_tap MINUS P
-&mt_exit_AML_on_tap LSHIFT A  &mt_exit_AML_on_tap LC(S) S  &kp_exit_AML D               &mo 7                        &kp_exit_AML G  &kp LS(LG(S))      &parenthesisdoulequote 0 0  &kp_exit_AML H  &mkp MB1        &mkp MB2                       &kp_exit_AML L                     &mo 5
-&mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B  &lt 6 ESCAPE       &lt 6 ESC                   &kp_exit_AML N  &kp_exit_AML M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
-&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &mo 3                        &mo 2           &mo 1              &kp BACKSPACE               &lt 8 ENTER                                                                                       &mo 7
+&mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                 &kp_exit_AML Y  &kp_exit_AML U   &kp_exit_AML I                 &kp_exit_AML O                     &mt_exit_AML_on_tap MINUS P
+&mt_exit_AML_on_tap LSHIFT A  &mt_exit_AML_on_tap LC(S) S  &kp_exit_AML D               &mo 7                        &kp_exit_AML G  &kp LS(LG(S))      &parenthesisdoulequote 0 0  &kp_exit_AML H  &jk_click MB1 J  &jk_click MB2 K                &kp_exit_AML L                     &mo 5
+&mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B  &lt 6 ESCAPE       &lt 6 ESC                   &kp_exit_AML N  &kp_exit_AML M   &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
+&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &mo 3                        &mo 2           &mo 1              &kp BACKSPACE               &lt 8 ENTER                                                                                        &mo 7
             >;
         };
 
