@@ -515,7 +515,7 @@
     };
 
     smaller_dpi {
-        layers = <7>;
+        layers = <4 7>;
         input-processors = <&zip_xy_scaler 1 5>;
     };
 };
