@@ -375,6 +375,19 @@
             bindings = <&mkp>, <&kp_exit_AML>; // Holdでクリック、Tapで文字+解除
         };
 
+
+// レイヤー4から「脱出」しつつ、別のレイヤーを「ホールド」する専用
+        lt_exit_l4: lt_exit_l4 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_EXIT_L4";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            // Holdで指定レイヤー(L3など)へ、Tapでレイヤー4解除
+            // (※Tapで解除されるので、次に何か打てばL0に戻っている)
+            bindings = <&mo>, <&tog_off 4>; 
+        };
+
         mtzeropoint: mtzeropoint {
             compatible = "zmk,behavior-hold-tap";
             label = "MTZEROPOINT";
