@@ -1,9 +1,9 @@
 &zip_mouse_gesture {
     enable-eager-mode;
-    stroke-size = <280>;
-    movement-threshold = <40>;
-    idle-timeout-ms = <100>;
-    gesture-cooldown-ms = <120>;
+stroke-size = <100>;          // 280から100へ大幅に下げ（移動距離を短縮）
+        movement-threshold = <10>;    // 40から10へ（小さな動きで検知開始）
+        idle-timeout-ms = <150>;      // 少しだけ余裕を持たせて止まった判定を安定させる
+        gesture-cooldown-ms = <100>;  // 次の動作への待機時間を短縮
 
     prev_tab  { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(LS(TAB))>; };  // 前のタブ
     next_tab  { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(TAB)>; };      // 次のタブ
