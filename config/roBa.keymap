@@ -364,13 +364,22 @@ jk_click: jk_click {
             compatible = "zmk,behavior-hold-tap";
             label = "JK_CLICK";
             #binding-cells = <2>;
-            tapping-term-ms = <200>; 
-            quick-tap-ms = <0>;
-            // flavor を変更して、長押し時のクリックを優先させる
-            flavor = "balanced"; 
-            // 引数は2つ（&mkp と &kp_exit_AML）受け取れるように設定
+            // 1. 判定時間を少し短くして、文字入力への復帰を早める
+            tapping-term-ms = <150>; 
+            
+            // 2. ダブルクリックを可能にする（超重要）
+            // 前回クリックしてから150ms以内に叩けば、判定を飛ばして即クリックする
+            quick-tap-ms = <150>;
+            
+            // 3. flavor を「hold-preferred」に変更
+            // これにより、押した瞬間に「他のキーが押されれば」即クリック、
+            // 何もなくても150ms経てば即クリックになります。
+            flavor = "hold-preferred"; 
+            
             bindings = <&mkp>, <&kp_exit_AML>;
         };
+
+
 
         lt_exit_l4: lt_exit_l4 {
             compatible = "zmk,behavior-hold-tap";
