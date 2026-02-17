@@ -23,6 +23,10 @@
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 500>; };
 
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+};
+
 &trackball {
     automouse-layer = <4>;
     scroll-layers = <5>;
