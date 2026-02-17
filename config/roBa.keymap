@@ -358,6 +358,23 @@
             flavor = "balanced";
         };
 
+// JとK専用の特別な判定
+        jk_click: jk_click {
+            compatible = "zmk,behavior-hold-tap";
+            label = "JK_CLICK";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>; 
+            quick-tap-ms = <200>;
+            
+            /* ここが肝：
+               他の操作（ボール移動や他キー）が割り込まない限り、
+               「文字入力(Tap)」を優先する設定 
+            */
+            flavor = "tap-unless-interrupted"; 
+            
+            bindings = <&mkp>, <&kp_exit_AML>; // Holdでクリック、Tapで文字+解除
+        };
+
         mtzeropoint: mtzeropoint {
             compatible = "zmk,behavior-hold-tap";
             label = "MTZEROPOINT";
