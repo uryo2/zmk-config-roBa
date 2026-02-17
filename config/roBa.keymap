@@ -21,8 +21,10 @@
     tapping-term-ms = <300>;
 };
 
+//クリックした後ミリ秒後にAMLが解除
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 1000>; };
 
+//キー入力から一定時間はAMLを発動しない
 &zip_temp_layer {
     require-prior-idle-ms = <100>;
 };
