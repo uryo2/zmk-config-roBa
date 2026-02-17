@@ -21,7 +21,7 @@
     tapping-term-ms = <300>;
 };
 
-&mkp_input_listener { input-processors = <&zip_temp_layer 4 5000>; };
+&mkp_input_listener { input-processors = <&zip_temp_layer 4 1000>; };
 
 &trackball {
     automouse-layer = <4>;
