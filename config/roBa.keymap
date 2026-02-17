@@ -547,4 +547,4 @@ mo_exit_AML: mo_exit_AML {
     layer-4 {
         layers = <4>;
         input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
-    };-{}@)(@()@()@()-{}@()-{}-{}-{}-{
+    };
