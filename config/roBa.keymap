@@ -21,7 +21,7 @@
     tapping-term-ms = <300>;
 };
 
-&mkp_input_listener { input-processors = <&zip_temp_layer 4 1000>; };
+&mkp_input_listener { input-processors = <&zip_temp_layer 4 250>; };
 
 &zip_temp_layer {
     require-prior-idle-ms = <150>;
