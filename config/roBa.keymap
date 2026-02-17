@@ -504,19 +504,12 @@
 };
 
 &trackball_listener {
-    /* 1. 最優先：レイヤー7（MO）が有効な時は、何があっても低DPIにする */
+
     smaller_dpi {
         layers = <7>;
         input-processors = <&zip_xy_scaler 1 5>;
     };
 
-    /* 2. 次点：レイヤー4（AML）のみが有効な時は、標準速度(1/1)にする */
-    layer-4 {
-        layers = <4>;
-        input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
-    };
-
-    /* 3. その他（既存の設定） */
     layer-2 {
         layers = <2>;
         input-processors = <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 1>;
@@ -526,5 +519,12 @@
         layers = <3>;
         input-processors = <&zip_mouse_gesture_l3>, <&zip_xy_scaler 1 1>;
     };
-};
+
+    layer-4 {
+        layers = <4>;
+        input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
+    };
+
+
+
 };
