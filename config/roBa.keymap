@@ -501,6 +501,8 @@
 &mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B   &lt 6 ESCAPE        &lt 6 ESC                   &kp_exit_AML N  &kp_exit_AML M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
 &kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &mo_exit_AML 9               &mo_exit_AML 10  &mo_exit_AML 1      &kp_exit_AML BACKSPACE      &lt 8 ENTER                                                                                       &mo 7
             >;
+
+            sensor-bindings = <&scroll_up_down>;
         };
 
         SCROLL {
