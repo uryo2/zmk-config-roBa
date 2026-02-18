@@ -393,6 +393,15 @@
             bindings = <&mo>, <&tog_off>;
         };
 
+hold_pref_shift: hold_pref_shift {
+    compatible = "zmk,behavior-hold-tap";
+    label = "HOLD_PREF_SHIFT";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    flavor = "hold-preferred"; // 迷ったらホールド（レイヤー）を優先
+    bindings = <&kp>, <&kp>;
+};
+
         mtzeropoint: mtzeropoint {
             compatible = "zmk,behavior-hold-tap";
             label = "MTZEROPOINT";
