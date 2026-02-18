@@ -496,10 +496,10 @@
 
         MOUSE {
             bindings = <
-&mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                    &kp_exit_AML Y  &kp_exit_AML U  &kp_exit_AML I                 &kp_exit_AML O                     &mt_exit_AML_on_tap MINUS P
-&mt_exit_AML_on_tap LSHIFT A  &mt_exit_AML_on_tap LC(S) S  &kp_exit_AML D               &mo 7                        &kp_exit_AML G   &kp LS(LG(S))        &parenthesisdoulequote 0 0  &kp_exit_AML H  &mkp MB1        &mkp MB2                       &kp_exit_AML L                     &mo 5
-&mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B   &lt 6 ESCAPE         &lt 6 ESC                   &kp_exit_AML N  &kp_exit_AML M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
-&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML 9 LC(SPACE)     &mo_exit_AML 10  &lt_exit_l4 1 4      &kp_exit_AML BACKSPACE      &lt 8 ENTER                                                                                       &mo 7
+&mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                   &kp_exit_AML Y  &kp_exit_AML U  &kp_exit_AML I                 &kp_exit_AML O                     &mt_exit_AML_on_tap MINUS P
+&mt_exit_AML_on_tap LSHIFT A  &mt_exit_AML_on_tap LC(S) S  &kp_exit_AML D               &mo 7                        &kp_exit_AML G   &kp LS(LG(S))       &parenthesisdoulequote 0 0  &kp_exit_AML H  &mkp MB1        &mkp MB2                       &kp_exit_AML L                     &mo 5
+&mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B   &lt 6 ESCAPE        &lt 6 ESC                   &kp_exit_AML N  &kp_exit_AML M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
+&kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &mo_exit_AML 9               &mo_exit_AML 10  &mo_exit_AML 1      &kp_exit_AML BACKSPACE      &lt 8 ENTER                                                                                       &mo 7
             >;
         };
 
