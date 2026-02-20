@@ -16,13 +16,14 @@
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
         enable-eager-mode;
-stroke-size = <220>;          // 100(敏感)と280(鈍重)の間をとって180
-        movement-threshold = <30>;    // 10(敏感)と40(鈍重)の間をとって25
-        idle-timeout-ms = <100>;      // 止め際をスッキリさせるため100に戻す
-        gesture-cooldown-ms = <150>;  // 暴発を防ぐため、一度発動した後の受付停止時間を少し確保
+        stroke-size = <350>;
+        movement-threshold = <60>;
+        idle-timeout-ms = <150>;
+        gesture-cooldown-ms = <150>;
 
-        vdesk_prev       { pattern = <GESTURE_LEFT>;  bindings = <&alt_shift_tab_press>; };
-        vdesk_next       { pattern = <GESTURE_RIGHT>; bindings = <&alt_tab_press>; };
-        task_view        { pattern = <GESTURE_UP>;    bindings = <&kp F5>; };
+        vdesk_prev { pattern = <GESTURE_LEFT>;  bindings = <&alt_shift_tab_press>; };
+        vdesk_next { pattern = <GESTURE_RIGHT>; bindings = <&alt_tab_press>; };
+        win_max    { pattern = <GESTURE_UP>;    bindings = <&kp LG(UP_ARROW)>; };
+        win_min    { pattern = <GESTURE_DOWN>;  bindings = <&kp LG(DOWN_ARROW)>; };
     };
 };
