@@ -13,9 +13,9 @@
         #input-processor-cells = <0>;
         enable-eager-mode;
 
-        stroke-size = <350>;
-        movement-threshold = <60>;
-        idle-timeout-ms = <150>;
+        stroke-size = <200>;
+        movement-threshold = <40>;
+        idle-timeout-ms = <200>;
         gesture-cooldown-ms = <150>;
 
         focus_url    { pattern = <GESTURE_UP>;    bindings = <&kp LS(F11)>; };
