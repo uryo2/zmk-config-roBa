@@ -1,8 +1,8 @@
 &zip_mouse_gesture {
     enable-eager-mode;
-    stroke-size = <200>;
-    movement-threshold = <40>;
-    idle-timeout-ms = <200>;
+    stroke-size = <150>;
+    movement-threshold = <20>;
+    idle-timeout-ms = <250>;
     gesture-cooldown-ms = <150>;
 
     prev_tab  { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(LS(TAB))>; };  // 前のタブ
