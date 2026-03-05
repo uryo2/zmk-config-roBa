@@ -7,6 +7,6 @@
 
         taskbar_prev { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(PG_UP)>; };
         taskbar_next { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(PG_DN)>; };
-    new_tab   { pattern = <GESTURE_UP>;    bindings = <&kp LC(T)>; };        // 新規タブ
+    new_tab   { pattern = <GESTURE_UP>;    bindings = <&kp F5>; };        // 新規タブ
     close_tab { pattern = <GESTURE_DOWN>;  bindings = <&kp LC(W)>; };        // タブを閉じる
 };
