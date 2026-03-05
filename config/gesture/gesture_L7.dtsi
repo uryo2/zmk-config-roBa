@@ -5,8 +5,8 @@
     idle-timeout-ms = <250>;
     gesture-cooldown-ms = <150>;
 
-    prev_tab  { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(LS(TAB))>; };  // 前のタブ
-    next_tab  { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(TAB)>; };      // 次のタブ
+        taskbar_prev { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(PG_UP)>; };
+        taskbar_next { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(PG_DN)>; };
     new_tab   { pattern = <GESTURE_UP>;    bindings = <&kp LC(T)>; };        // 新規タブ
     close_tab { pattern = <GESTURE_DOWN>;  bindings = <&kp LC(W)>; };        // タブを閉じる
 };
