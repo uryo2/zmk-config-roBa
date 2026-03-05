@@ -124,6 +124,16 @@
             bindings = <&kp LA(LC(TAB))>;
             key-positions = <20 21 19 18>;
         };
+
+        max {
+            bindings = <&kp LG(UP_ARROW)>;
+            key-positions = <9 6 7 8>;
+        };
+
+        minimum {
+            bindings = <&kp LG(DOWN)>;
+            key-positions = <30 31 32 33>;
+        };
     };
 
     macros {
@@ -510,10 +520,10 @@
 
         layer_9 {
             bindings = <
-&kp TAB  &kp LC(LS(TAB))  &td_up              &kp LC(TAB)  &mt LS(RC(HOME)) HOME                              &mt PERCENT KP_SLASH           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt UNDERSCORE MINUS
-&trans   &td_left         &td_down            &td_right    &mt LS(RC(END)) END    &trans      &kp KP_NUMLOCK  &mt NON_US_BACKSLASH ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt AMPERSAND PLUS
-&trans   &trans           &kp LA(DOWN_ARROW)  &trans       &trans                 &trans      &mt AT PERIOD   &mtzeropoint 0 KP_N0           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL
-&trans   &trans           &trans              &mo 9        &mo 10                 &mo 1       &trans          &trans                                                                            &trans
+&kp TAB  &kp LC(LS(TAB))   &td_up              &kp LC(TAB)        &mt LS(RC(HOME)) HOME                              &mt PERCENT KP_SLASH           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt UNDERSCORE MINUS
+&trans   &td_left          &td_down            &td_right          &mt LS(RC(END)) END    &trans      &kp KP_NUMLOCK  &mt NON_US_BACKSLASH ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt AMPERSAND PLUS
+&trans   &kp LG(LS(LEFT))  &kp LA(DOWN_ARROW)  &kp LG(LS(RIGHT))  &trans                 &trans      &mt AT PERIOD   &mtzeropoint 0 KP_N0           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL
+&trans   &trans            &trans              &mo 9              &mo 10                 &mo 1       &trans          &trans                                                                            &trans
             >;
         };
 
