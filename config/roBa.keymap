@@ -119,6 +119,11 @@
             bindings = <&bootloader>;
             key-positions = <27 28>;
         };
+
+        ctrlAltTAB {
+            bindings = <&kp LA(LC(TAB))>;
+            key-positions = <20 21 19 18>;
+        };
     };
 
     macros {
@@ -343,7 +348,9 @@
             quick-tap-ms = <200>;
             bindings = <&doubledoublequote>, <&parenthesisJP>;
         };
+
         /* 1回目のタップ用: 単押し=そのまま / 長押し=Ctrl+キー */
+
         ht_arrow_1: ht_arrow_1 {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_ARROW_1";
@@ -355,6 +362,7 @@
         };
 
         /* 2回目のタップ用: 単押し=なし / 長押し=Ctrl+Shift+キー */
+
         ht_arrow_2: ht_arrow_2 {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_ARROW_2";
@@ -370,7 +378,9 @@
             label = "TD_UP";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ht_arrow_1 LC(UP_ARROW) UP_ARROW>, <&ht_arrow_2 LC(LS(UP_ARROW)) 0>;
+            bindings =
+                <&ht_arrow_1 LC(UP_ARROW) UP_ARROW>,
+                <&ht_arrow_2 LC(LS(UP_ARROW)) 0>;
         };
 
         td_down: td_down {
@@ -378,7 +388,9 @@
             label = "TD_DOWN";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ht_arrow_1 LC(DOWN_ARROW) DOWN_ARROW>, <&ht_arrow_2 LC(LS(DOWN_ARROW)) 0>;
+            bindings =
+                <&ht_arrow_1 LC(DOWN_ARROW) DOWN_ARROW>,
+                <&ht_arrow_2 LC(LS(DOWN_ARROW)) 0>;
         };
 
         td_left: td_left {
@@ -386,7 +398,9 @@
             label = "TD_LEFT";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ht_arrow_1 LC(LEFT_ARROW) LEFT_ARROW>, <&ht_arrow_2 LC(LS(LEFT_ARROW)) 0>;
+            bindings =
+                <&ht_arrow_1 LC(LEFT_ARROW) LEFT_ARROW>,
+                <&ht_arrow_2 LC(LS(LEFT_ARROW)) 0>;
         };
 
         td_right: td_right {
@@ -394,7 +408,9 @@
             label = "TD_RIGHT";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ht_arrow_1 LC(RIGHT_ARROW) RIGHT_ARROW>, <&ht_arrow_2 LC(LS(RIGHT_ARROW)) 0>;
+            bindings =
+                <&ht_arrow_1 LC(RIGHT_ARROW) RIGHT_ARROW>,
+                <&ht_arrow_2 LC(LS(RIGHT_ARROW)) 0>;
         };
     };
 
@@ -494,10 +510,10 @@
 
         layer_9 {
             bindings = <
-&kp TAB  &kp LC(LS(TAB))  &td_up   &kp LC(TAB)  &mt LS(RC(HOME)) HOME                              &mt PERCENT KP_SLASH           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt UNDERSCORE MINUS
-&trans   &td_left         &td_down &td_right    &mt LS(RC(END)) END    &trans      &kp KP_NUMLOCK  &mt NON_US_BACKSLASH ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt AMPERSAND PLUS
-&trans   &trans           &kp LA(DOWN_ARROW)             &trans                           &trans                 &trans      &mt AT PERIOD   &mtzeropoint 0 KP_N0           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL
-&trans   &trans                         &trans                         &mo 9                            &mo 10                 &mo 1       &trans          &trans                                                                            &trans
+&kp TAB  &kp LC(LS(TAB))  &td_up              &kp LC(TAB)  &mt LS(RC(HOME)) HOME                              &mt PERCENT KP_SLASH           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt UNDERSCORE MINUS
+&trans   &td_left         &td_down            &td_right    &mt LS(RC(END)) END    &trans      &kp KP_NUMLOCK  &mt NON_US_BACKSLASH ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt AMPERSAND PLUS
+&trans   &trans           &kp LA(DOWN_ARROW)  &trans       &trans                 &trans      &mt AT PERIOD   &mtzeropoint 0 KP_N0           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL
+&trans   &trans           &trans              &mo 9        &mo 10                 &mo 1       &trans          &trans                                                                            &trans
             >;
         };
 
