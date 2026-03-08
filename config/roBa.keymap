@@ -27,7 +27,7 @@
 
 //キー入力から一定時間はAMLを発動しない
 
-&zip_temp_layer { require-prior-idle-ms = <150>; };
+&zip_temp_layer { require-prior-idle-ms = <200>; };
 
 &trackball {
     automouse-layer = <4>;
