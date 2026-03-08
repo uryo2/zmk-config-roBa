@@ -380,47 +380,39 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&kp>, <&none>;
+            bindings = <&kp>, <&kp>;
         };
 
         td_up: td_up {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_UP";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings =
-                <&ht_arrow_1 LC(UP_ARROW) UP_ARROW>,
-                <&ht_arrow_2 LC(LS(UP_ARROW)) 0>;
+            tapping-term-ms = <150>;
+            bindings = <&ht_arrow_1 LC(UP_ARROW) UP_ARROW>, <&ht_arrow_2 LC(LS(UP_ARROW)) UP_ARROW>;
         };
 
         td_down: td_down {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_DOWN";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings =
-                <&ht_arrow_1 LC(DOWN_ARROW) DOWN_ARROW>,
-                <&ht_arrow_2 LC(LS(DOWN_ARROW)) 0>;
+            tapping-term-ms = <150>;
+            bindings = <&ht_arrow_1 LC(DOWN_ARROW) DOWN_ARROW>, <&ht_arrow_2 LC(LS(DOWN_ARROW)) DOWN_ARROW>;
         };
 
         td_left: td_left {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LEFT";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings =
-                <&ht_arrow_1 LC(LEFT_ARROW) LEFT_ARROW>,
-                <&ht_arrow_2 LC(LS(LEFT_ARROW)) 0>;
+            tapping-term-ms = <150>;
+            bindings = <&ht_arrow_1 LC(LEFT_ARROW) LEFT_ARROW>, <&ht_arrow_2 LC(LS(LEFT_ARROW)) LEFT_ARROW>;
         };
 
         td_right: td_right {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_RIGHT";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings =
-                <&ht_arrow_1 LC(RIGHT_ARROW) RIGHT_ARROW>,
-                <&ht_arrow_2 LC(LS(RIGHT_ARROW)) 0>;
+            tapping-term-ms = <150>;
+            bindings = <&ht_arrow_1 LC(RIGHT_ARROW) RIGHT_ARROW>, <&ht_arrow_2 LC(LS(RIGHT_ARROW)) RIGHT_ARROW>;
         };
     };
 
