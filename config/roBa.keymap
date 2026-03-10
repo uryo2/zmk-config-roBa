@@ -122,17 +122,23 @@
 
         ctrlAltTAB {
             bindings = <&kp LA(LC(TAB))>;
-            key-positions = <20 21 19 18>;
+            key-positions = <20 19 18 21>;
         };
 
         max {
             bindings = <&kp LG(UP_ARROW)>;
-            key-positions = <9 6 7 8>;
+            key-positions = <6 7 8 9>;
         };
 
         minimum {
             bindings = <&kp LG(DOWN)>;
             key-positions = <30 31 32 33>;
+        };
+
+        volmute {
+            bindings = <&kp K_MUTE>;
+            key-positions = <27 15>;
+            layers = <1>;
         };
     };
 
@@ -388,7 +394,9 @@
             label = "TD_UP";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&ht_arrow_1 LC(UP_ARROW) UP_ARROW>, <&ht_arrow_2 LC(LS(UP_ARROW)) UP_ARROW>;
+            bindings =
+                <&ht_arrow_1 LC(UP_ARROW) UP_ARROW>,
+                <&ht_arrow_2 LC(LS(UP_ARROW)) UP_ARROW>;
         };
 
         td_down: td_down {
@@ -396,7 +404,9 @@
             label = "TD_DOWN";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&ht_arrow_1 LC(DOWN_ARROW) DOWN_ARROW>, <&ht_arrow_2 LC(LS(DOWN_ARROW)) DOWN_ARROW>;
+            bindings =
+                <&ht_arrow_1 LC(DOWN_ARROW) DOWN_ARROW>,
+                <&ht_arrow_2 LC(LS(DOWN_ARROW)) DOWN_ARROW>;
         };
 
         td_left: td_left {
@@ -404,7 +414,9 @@
             label = "TD_LEFT";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&ht_arrow_1 LC(LEFT_ARROW) LEFT_ARROW>, <&ht_arrow_2 LC(LS(LEFT_ARROW)) LEFT_ARROW>;
+            bindings =
+                <&ht_arrow_1 LC(LEFT_ARROW) LEFT_ARROW>,
+                <&ht_arrow_2 LC(LS(LEFT_ARROW)) LEFT_ARROW>;
         };
 
         td_right: td_right {
@@ -412,7 +424,9 @@
             label = "TD_RIGHT";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&ht_arrow_1 LC(RIGHT_ARROW) RIGHT_ARROW>, <&ht_arrow_2 LC(LS(RIGHT_ARROW)) RIGHT_ARROW>;
+            bindings =
+                <&ht_arrow_1 LC(RIGHT_ARROW) RIGHT_ARROW>,
+                <&ht_arrow_2 LC(LS(RIGHT_ARROW)) RIGHT_ARROW>;
         };
     };
 
@@ -432,10 +446,10 @@
 
         FUNCTION {
             bindings = <
-&kp F12  &kp F7  &kp F8  &kp F9  &trans                                        &kp CARET       &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp HASH
-&kp F11  &kp F4  &kp F5  &kp F6  &trans  &kp C_MUTE      &kp NON_US_BACKSLASH  &kp DOLLAR      &kp AT_SIGN    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION
-&kp F10  &kp F1  &kp F2  &kp F3  &trans  &trans          &kp PIPE              &kp UNDERSCORE  &kp MINUS      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp EXCLAMATION
-&trans   &trans  &trans  &trans  &trans  &trans          &trans                &trans                                                                      &trans
+&kp F12  &kp F7  &kp F8  &kp F9  &trans                                             &kp CARET       &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp HASH
+&kp F11  &kp F4  &kp F5  &kp F6  &trans  &kp C_VOLUME_UP      &kp NON_US_BACKSLASH  &kp DOLLAR      &kp AT_SIGN    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION
+&kp F10  &kp F1  &kp F2  &kp F3  &trans  &kp C_VOL_DN         &kp PIPE              &kp UNDERSCORE  &kp MINUS      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp EXCLAMATION
+&trans   &trans  &trans  &trans  &trans  &trans               &trans                &trans                                                                      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
