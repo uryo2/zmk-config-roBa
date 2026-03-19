@@ -85,7 +85,7 @@
             layers = <9 10>;
         };
 
-        mb4 {
+        mb3 {
             bindings = <&mkp MB3>;
             key-positions = <18 19 20>;
             layers = <4>;
@@ -97,7 +97,7 @@
             layers = <4>;
         };
 
-        mb3 {
+        mb4 {
             bindings = <&mkp MB4>;
             key-positions = <30 31>;
             layers = <4>;
@@ -122,17 +122,17 @@
 
         ctrlAltTAB {
             bindings = <&kp LA(LC(TAB))>;
-            key-positions = <20 19 18 21>;
+            key-positions = <20 19 18>;
         };
 
         max {
             bindings = <&kp LG(UP_ARROW)>;
-            key-positions = <6 7 8 9>;
+            key-positions = <6 7 8>;
         };
 
         minimum {
             bindings = <&kp LG(DOWN)>;
-            key-positions = <30 31 32 33>;
+            key-positions = <30 31 32>;
         };
 
         volmute {
@@ -155,6 +155,11 @@
             bindings = <&mkp MB2>;
             key-positions = <18 19>;
             layers = <4>;
+        };
+
+        kakko {
+            bindings = <&parenthesisdoulequote 0 0>;
+            key-positions = <20 19>;
         };
 
         // kakko {
@@ -501,7 +506,7 @@
         MOUSE {
             bindings = <
 &mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                   &kp_exit_AML Y  &kp_exit_AML U  &kp_exit_AML I                 &kp_exit_AML O                     &mt_exit_AML_on_tap MINUS P
-&mt_exit_AML_on_tap LSHIFT A  &mt_exit_AML_on_tap LC(S) S  &kp_exit_AML D               &mo 7                        &kp_exit_AML G   &kp LS(LG(S))       &parenthesisdoulequote 0 0  &kp_exit_AML H  &mkp MB1        &kp_exit_AML K                 &lt 5 L                            &mo 5
+&mt_exit_AML_on_tap LSHIFT A  &mt_exit_AML_on_tap LC(S) S  &kp_exit_AML D               &mo 7                        &kp_exit_AML G   &kp LS(LG(S))       &parenthesisdoulequote 0 0  &kp_exit_AML H  &mkp MB1        &kp_exit_AML K                 &lt_exit_AML_on_hold 5 L           &mo 5
 &mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B   &lt 6 ESCAPE        &lt 6 ESC                   &kp_exit_AML N  &kp_exit_AML M  &mt_exit_AML_on_tap SQT COMMA  &mt_exit_AML_on_tap SEMICOLON DOT  &mt_exit_AML_on_tap EXCLAMATION SLASH
 &kp LEFT_CONTROL              &kp LEFT_COMMAND             &kp LEFT_ALT                 &mo_exit_AML 9               &mo_exit_AML 10  &mo_exit_AML 1      &kp_exit_AML BACKSPACE      &lt 8 ENTER                                                                                       &mo 7
             >;
