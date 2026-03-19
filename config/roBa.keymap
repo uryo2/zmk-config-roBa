@@ -459,6 +459,48 @@
                 <&ht_arrow_1 LC(RIGHT_ARROW) RIGHT_ARROW>,
                 <&ht_arrow_2 LC(LS(RIGHT_ARROW)) RIGHT_ARROW>;
         };
+
+        ht_layer_none: ht_layer_none {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_LAYER_NONE";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&none>;
+        };
+
+        ht_key_none: ht_key_none {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_KEY_NONE";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&none>;
+        };
+
+        td_mo7: td_mo7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MO7";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&ht_layer_none 7 0>, <&ht_key_none RIGHT_CONTROL 0>;
+        };
+
+        td_qmark_l0: td_qmark_l0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_QMARK_L0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&ht_arrow_1 RIGHT_SHIFT SLASH>, <&ht_arrow_1 RIGHT_SHIFT EXCLAMATION>;
+        };
+
+        td_qmark_l4: td_qmark_l4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_QMARK_L4";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt_exit_AML_on_tap EXCLAMATION SLASH>, <&mt_exit_AML_on_tap RIGHT_SHIFT EXCLAMATION>;
+        };
     };
 
     keymap {
