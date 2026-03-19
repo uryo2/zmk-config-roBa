@@ -167,6 +167,11 @@
             key-positions = <32 31 30 41>;
         };
 
+        reload {
+            bindings = <&kp F5>;
+            key-positions = <41 6 7 8>;
+        };
+
         // kakko {
         //     bindings = <&parenthesisdoulequote 0 0>;
         //     key-positions = <20 19>;
