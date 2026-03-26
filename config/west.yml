@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/kot149
     - name: ssbb
       url-base: https://github.com/ssbb
+    - name: oleksandrmaslov
+      url-base: https://github.com/oleksandrmaslov
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -29,5 +31,8 @@ manifest:
     - name: zmk-listeners
       remote: ssbb
       revision: v1
+    - name: zmk-pointing-acceleration
+      remote: oleksandrmaslov
+      revision: main
   self:
     path: config

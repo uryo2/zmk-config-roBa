@@ -648,22 +648,32 @@
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
     };
+
+    zip_xy_accel: zip_xy_accel {
+        compatible = "zmk,input-processor-accel";
+        track-remainders;
+        min-factor = <200>;
+        max-factor = <3000>;
+        speed-threshold = <200>;
+        speed-max = <1200>;
+        acceleration-exponent = <2>;
+    };
 };
 
 &trackball_listener {
     layer-7 {
         layers = <7>;
-        input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 5>;
+        input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 5>, <&zip_xy_accel>;
     };
 
     layer-9 {
         layers = <9>;
-        input-processors = <&zip_mouse_gesture_l3>, <&zip_xy_scaler 1 1>;
+        input-processors = <&zip_mouse_gesture_l3>, <&zip_xy_scaler 1 1>, <&zip_xy_accel>;
     };
 
     layer-10 {
         layers = <10>;
-        input-processors = <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 1>;
+        input-processors = <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 1>, <&zip_xy_accel>;
     };
 
     //layer-4 {
