@@ -651,6 +651,7 @@
 
     zip_xy_accel: zip_xy_accel {
         compatible = "zmk,input-processor-accel";
+        #input-processor-cells = <0>;
         track-remainders;
         min-factor = <200>;
         max-factor = <3000>;
