@@ -23,6 +23,12 @@
     tapping-term-ms = <300>;
 };
 
+&lt {
+    tapping-term-ms = <150>; // 200(デフォルト)から150に短くする例
+    quick-tap-ms = <200>;    // 連打で単押しを確定させたい場合に有効
+    flavor = "balanced";     // 迷ったら balanced か tap-preferred
+};
+
 //クリックした後ミリ秒後にAMLが解除
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 3000000>; };
