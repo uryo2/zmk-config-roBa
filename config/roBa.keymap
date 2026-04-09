@@ -661,8 +661,8 @@
     input-type = <2>;
     track-remainders;
     min-factor = <400>;
-    max-factor = <3000>;
-    speed-threshold = <500>;
+    max-factor = <3200>;
+    speed-threshold = <400>;
     speed-max = <4000>;
     acceleration-exponent = <2>;
 };
