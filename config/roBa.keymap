@@ -662,7 +662,7 @@
     track-remainders;
     min-factor = <400>;
     max-factor = <3200>;
-    speed-threshold = <400>;
+    speed-threshold = <300>;
     speed-max = <4000>;
     acceleration-exponent = <2>;
 };
