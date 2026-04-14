@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/kumamuk-git
     - name: eintim
       url-base: https://github.com/eintim
-    - name: kloir-z
-      url-base: https://github.com/kloir-z
+    - name: sekigon-gonnoc
+      url-base: https://github.com/sekigon-gonnoc
     - name: kot149
       url-base: https://github.com/kot149
     - name: ssbb
@@ -19,9 +19,9 @@ manifest:
       remote: zmkfirmware
       revision: v0.3-branch
       import: app/west.yml
-    - name: zmk-pmw3610-driver
-      remote: kloir-z
-      revision: 96b23443cb6aae0f182aaa5f4109582e6afdd5dc
+    - name: zmk-driver-paw3222
+      remote: sekigon-gonnoc
+      revision: main
     - name: zmk-behavior-battery-typer
       remote: eintim
       revision: main

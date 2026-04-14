@@ -32,8 +32,9 @@
 &zip_temp_layer { require-prior-idle-ms = <200>; };
 
 &trackball {
-    automouse-layer = <4>;
-    scroll-layers = <5>;
+    // PMW3610固有のautomouse-layer / scroll-layers は削除
+    // automouseは &mkp_input_listener + &zip_temp_layer で代替
+    // scrollはlayer-5の input-processors で代替
 
     // arrows {
     //     layers = <3>;
@@ -662,6 +663,11 @@
 };
 
 &trackball_listener {
+    layer-5 {
+        layers = <5>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 4>;
+    };
+
     layer-7 {
         layers = <7>;
         input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 5>;
