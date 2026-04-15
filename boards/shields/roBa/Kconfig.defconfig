@@ -9,6 +9,18 @@ config ZMK_SPLIT
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+config ZMK_POINTING
+    default y
+
+config INPUT
+    default y
+
+config SPI
+    default y
+
+config PAW3222
+    default y
+
 endif
 
 if SHIELD_ROBA_L
