@@ -5,15 +5,15 @@
 // ---------------------------------------------------------
 // JIS Symbols Mapping
 // ---------------------------------------------------------
-#define JP_EXCL   LS(N1)          // !
-#define JP_DQT    LS(N2)          // "
-#define JP_HASH   LS(N3)          // #
-#define JP_DLLR   LS(N4)          // $
-#define JP_PRCNT  LS(N5)          // %
-#define JP_AMPRS  LS(N6)          // &
-#define JP_SQT    LS(N7)          // '
-#define JP_LPAR   LS(N8)          // (
-#define JP_RPAR   LS(N9)          // )
+#define JP_EXCL   LS(NUMBER_1)    // !
+#define JP_DQT    LS(NUMBER_2)    // "
+#define JP_HASH   LS(NUMBER_3)    // #
+#define JP_DLLR   LS(NUMBER_4)    // $
+#define JP_PRCNT  LS(NUMBER_5)    // %
+#define JP_AMPRS  LS(NUMBER_6)    // &
+#define JP_SQT    LS(NUMBER_7)    // '
+#define JP_LPAR   LS(NUMBER_8)    // (
+#define JP_RPAR   LS(NUMBER_9)    // )
 
 #define JP_EQUAL  LS(MINUS)       // =
 #define JP_MINUS  MINUS           // -
