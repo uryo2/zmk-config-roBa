@@ -52,6 +52,12 @@
     tapping-term-ms = <300>;
 };
 
+&lt {
+    tapping-term-ms = <170>; // 200(デフォルト)から150に短くする例
+    quick-tap-ms = <200>;    // 連打で単押しを確定させたい場合に有効
+    flavor = "balanced";     // 迷ったら balanced か tap-preferred
+};
+
 //クリックした後ミリ秒後にAMLが解除
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 3000000>; };
@@ -684,9 +690,9 @@
     input-type = <2>;
     track-remainders;
     min-factor = <400>;
-    max-factor = <3000>;
-    speed-threshold = <500>;
-    speed-max = <4000>;
+    max-factor = <4000>;
+    speed-threshold = <250>;
+    speed-max = <3000>;
     acceleration-exponent = <2>;
 };
 
