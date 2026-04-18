@@ -1,5 +1,11 @@
 #include "roBa.dtsi"
 
+/ {
+    chosen {
+        zephyr,console = &cdc_acm_uart;
+    };
+};
+
 &default_transform {
     col-offset = <6>;
 };
