@@ -680,16 +680,6 @@
     };
 };
 
-&pointer_accel {
-    input-type = <2>;
-    track-remainders;
-    min-factor = <400>;
-    max-factor = <3800>;
-    speed-threshold = <350>;
-    speed-max = <3000>;
-    acceleration-exponent = <2>;
-};
-
 &trackball_listener {
     layer-7 {
         layers = <7>;
