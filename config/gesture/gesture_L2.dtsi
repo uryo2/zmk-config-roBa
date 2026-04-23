@@ -2,9 +2,6 @@
  * Layer 10 (旧Layer 2) Mouse Gestures
  *
  * Bindings:
- * - UP:    LS(F11)    (フルスクリーン切り替え)
- * - LEFT:  LC(PG_UP)  (前のタブ)
- * - RIGHT: LC(PG_DN)  (次のタブ)
  */
 
 / {
@@ -18,8 +15,8 @@
         idle-timeout-ms = <250>;
         gesture-cooldown-ms = <150>;
 
-        focus_url    { pattern = <GESTURE_UP>;    bindings = <&kp LS(F11)>; };
-        taskbar_prev { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(PG_UP)>; };
-        taskbar_next { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(PG_DN)>; };
+        focus_url    { pattern = <GESTURE_UP>;    bindings = <&kp LG(UP_ARROW)>; };
+        taskbar_prev { pattern = <GESTURE_LEFT>;  bindings = <&kp LG(LS(LEFT))>; };
+        taskbar_next { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(LS(RIGHT))>; };
     };
 };
