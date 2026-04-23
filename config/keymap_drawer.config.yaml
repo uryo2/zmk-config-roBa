@@ -1,0 +1,103 @@
+parse_config:
+  zmk_keycode_map:
+    # -------------------------------------------------------------
+    # JIS Keycode Visual Overrides for keymap-drawer
+    # When using US ANSI codes on a JIS OS, the symbols shift.
+    # We map the standard ZMK ANSI names back to their true JIS outputs.
+    # -------------------------------------------------------------
+    
+    # Numbers (Shifted)
+    EXCLAMATION: "!"
+    EXCL: "!"
+    AT_SIGN: '"'
+    AT: '"'
+    HASH: "#"
+    POUND: "#"
+    DOLLAR: "$"
+    DLLR: "$"
+    PERCENT: "%"
+    PRCNT: "%"
+    CARET: "&"
+    AMPERSAND: "'"
+    AMPRS: "'"
+    ASTERISK: "("
+    ASTRK: "("
+    STAR: "("
+    LEFT_PARENTHESIS: ")"
+    LPAR: ")"
+    RIGHT_PARENTHESIS: "" # Usually nothing on JIS Shift+0
+    
+    # Symbols Base & Shifted
+    EQUAL: "^"
+    PLUS: "~"
+    MINUS: "-"
+    UNDERSCORE: "_"
+    
+    LEFT_BRACKET: "@"
+    LBKT: "@"
+    LEFT_BRACE: "`"
+    LBRC: "`"
+
+    RIGHT_BRACKET: "["
+    RBKT: "["
+    RIGHT_BRACE: "{"
+    RBRC: "{"
+    
+    NON_US_HASH: "]"
+    NUHS: "]"
+    TILDE2: "}"
+
+    SEMICOLON: ";"
+    SEMI: ";"
+    COLON: "+"
+    
+    SINGLE_QUOTE: ":"
+    SQT: ":"
+    APOSTROPHE: ":"
+    APOS: ":"
+    DOUBLE_QUOTES: "*"
+    DQT: "*"
+    
+    INTERNATIONAL_1: "\\"
+    INT1: "\\"
+    INT_RO: "\\"
+    
+    INTERNATIONAL_3: "¥"
+    INT3: "¥"
+    INT_YEN: "¥"
+    
+    PIPE: "|"
+    PIPE2: "|"
+
+  raw_binding_map:
+    # -------------------------------------------------------------
+    # Failsafe overrides for our custom macros just in case they 
+    # don't expand properly during dtc preprocessing.
+    # -------------------------------------------------------------
+    "&kp JP_EXCL": "!"
+    "&kp JP_DQT": '"'
+    "&kp JP_HASH": "#"
+    "&kp JP_DLLR": "$"
+    "&kp JP_PRCNT": "%"
+    "&kp JP_AMPRS": "&"
+    "&kp JP_SQT": "'"
+    "&kp JP_LPAR": "("
+    "&kp JP_RPAR": ")"
+    "&kp JP_EQUAL": "="
+    "&kp JP_MINUS": "-"
+    "&kp JP_CARET": "^"
+    "&kp JP_TILDE": "~"
+    "&kp JP_YEN": "¥"
+    "&kp JP_PIPE": "|"
+    "&kp JP_AT": "@"
+    "&kp JP_GRAVE": "`"
+    "&kp JP_LBRC": "["
+    "&kp JP_LCBR": "{"
+    "&kp JP_RBRC": "]"
+    "&kp JP_RCBR": "}"
+    "&kp JP_SEMI": ";"
+    "&kp JP_PLUS": "+"
+    "&kp JP_COLON": ":"
+    "&kp JP_ASTER": "*"
+    "&kp JP_BSLH": "\\"
+    "&kp JP_UNDER": "_"

@@ -1,0 +1,23 @@
+name: Draw Keymap
+on:
+  workflow_dispatch:  # Allows manual triggering
+  push:
+    paths:
+      - 'config/*.keymap'
+      - 'config/*.dtsi'
+      - 'boards/shields/**/*.keymap'
+      - 'boards/shields/**/*.dtsi'
+      - '.github/workflows/draw-keymap.yml'
+      - 'config/keymap_drawer.config.yaml'
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write
+    with:
+      keymap_patterns: "config/*.keymap"
+      config_path: "config/keymap_drawer.config.yaml"
+      output_folder: "keymap-drawer"
+      amend_commit: true
+      install_branch: "main"
