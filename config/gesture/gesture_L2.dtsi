@@ -15,8 +15,9 @@
         idle-timeout-ms = <250>;
         gesture-cooldown-ms = <150>;
 
-        focus_url    { pattern = <GESTURE_UP>;    bindings = <&kp LG(UP_ARROW)>; };
-        taskbar_prev { pattern = <GESTURE_LEFT>;  bindings = <&kp LG(LS(LEFT))>; };
-        taskbar_next { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(LS(RIGHT))>; };
+        win_max    { pattern = <GESTURE_UP>;    bindings = <&kp LG(UP_ARROW)>; };
+        win_left { pattern = <GESTURE_LEFT>;  bindings = <&kp LG(LS(LEFT))>; };
+        win_right { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(LS(RIGHT))>; };
+win_min    { pattern = <GESTURE_DOWN>;  bindings = <&kp LG(DOWN_ARROW)>; };
     };
 };
