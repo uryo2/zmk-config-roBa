@@ -21,7 +21,7 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-    input-processors = <&zip_xy_scaler 1 1>;
+    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_scaler 1 1>;
 
     scroller {
         layers = <2>;
