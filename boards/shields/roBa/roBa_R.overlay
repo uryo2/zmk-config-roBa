@@ -21,10 +21,13 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 1>;
+    // XY反転 → スケール → オートマウスレイヤー4に自動切替
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+                       <&zip_xy_scaler 1 1>,
+                       <&zip_temp_layer 4>;
 
     scroller {
-        layers = <2>;
+        layers = <5>;  // レイヤー5でスクロールモード
         input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,       // X軸とY軸の入れ替え
                            <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,      // X軸反転
                            <&zip_xy_to_scroll_mapper>,                        // スクロールモードに変更
