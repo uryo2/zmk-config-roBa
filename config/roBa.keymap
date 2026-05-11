@@ -685,7 +685,7 @@
     // XY反転 → スケール → オートマウスレイヤー4に自動切替
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
                        <&zip_xy_scaler 1 1>,
-                       <&zip_temp_layer 4>;
+                       <&zip_temp_layer 4 2000>;
 
     scroller {
         layers = <5>;  // レイヤー5でスクロールモード
