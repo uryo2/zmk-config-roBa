@@ -36,6 +36,6 @@ manifest:
       revision: v1
     - name: zmk-pointing-acceleration
       remote: oleksandrmaslov
-      revision: main
+      revision: c52b84646368c3dbbcc0fab9e61bf16bf3bdac80
   self:
     path: config
