@@ -36,6 +36,6 @@ manifest:
       revision: v1
     - name: zmk-pointing-acceleration
       remote: oleksandrmaslov
-      revision: v0.3-branch
+      revision: zephyr-3.2
   self:
     path: config
