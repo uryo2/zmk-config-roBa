@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) 2024 Oleksandr Maslov
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ {
+    zip_acceleration: pointer_accel {
+        compatible = "zmk,input-processor-accel";
+        #input-processor-cells = <0>;
+        input-type = <2>; /* INPUT_EV_REL */
+    };
+};

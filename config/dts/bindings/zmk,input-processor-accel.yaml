@@ -1,0 +1,40 @@
+description: "ZMK pointer acceleration input processor"
+
+compatible: "zmk,input-processor-accel"
+
+include: base.yaml
+
+properties:
+    input-type:
+        type: int
+        required: true
+        description: "Event type to filter on. Typically 2 (INPUT_EV_REL)"
+        
+    track-remainders:
+        type: boolean
+        description: "Track fractional remainder across events"
+        
+    min-factor:
+        type: int
+        required: true
+        description: "Scale factor * 1000 applied below speed-threshold"
+        
+    max-factor:
+        type: int
+        required: true
+        description: "Scale factor * 1000 applied above speed-max"
+        
+    speed-threshold:
+        type: int
+        required: true
+        description: "Speed (units/s) where acceleration begins"
+        
+    speed-max:
+        type: int
+        required: true
+        description: "Speed (units/s) where max-factor is reached"
+        
+    acceleration-exponent:
+        type: int
+        required: true
+        description: "Exponent for the acceleration curve"
