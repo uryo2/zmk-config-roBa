@@ -105,7 +105,14 @@ static int accel_process(const struct device *dev, struct input_event *event)
     return 0;
 }
 
-#if __has_include(<zephyr/drivers/input_processor.h>) || __has_include(<drivers/input_processor.h>)
+struct zmk_input_processor_driver_api {
+    int (*handle_event)(const struct device *dev, struct input_event *event);
+};
+
+static const struct zmk_input_processor_driver_api accel_api = {
+    .handle_event = accel_process,
+};
+
 static int accel_init(const struct device *dev)
 {
     return 0;
@@ -122,11 +129,8 @@ static int accel_init(const struct device *dev)
         .speed_max = DT_INST_PROP(n, speed_max),                                       \
         .acceleration_exponent = DT_INST_PROP(n, acceleration_exponent),               \
     };                                                                                 \
-    INPUT_PROCESSOR_DEVICE_DT_INST_DEFINE(n, accel_init, NULL, &accel_data_##n,        \
-                                          &accel_config_##n, POST_KERNEL,              \
-                                          CONFIG_INPUT_INIT_PRIORITY, accel_process);
+    DEVICE_DT_INST_DEFINE(n, accel_init, NULL, &accel_data_##n,                        \
+                          &accel_config_##n, POST_KERNEL,                              \
+                          CONFIG_INPUT_INIT_PRIORITY, &accel_api);
 
 DT_INST_FOREACH_STATUS_OKAY(ACCEL_INST)
-#else
-// Fallback logic if needed, but in v0.3 this is usually fine.
-#endif
