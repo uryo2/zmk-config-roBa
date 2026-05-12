@@ -3,7 +3,7 @@
 #include <scroll-snap.dtsi>
 #include <mouse-gesture.dtsi>   /* kot149 モジュール */
 #include <behaviors/bat_print.dtsi>
-#include <behaviors/input_gestures_accel.dtsi>
+#include "behaviors/input_gestures_accel.dtsi"
 
 
 #define JP_EXCL   (LS(NUMBER_1))
