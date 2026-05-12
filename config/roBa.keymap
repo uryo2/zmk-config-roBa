@@ -3,8 +3,6 @@
 #include <scroll-snap.dtsi>
 #include <mouse-gesture.dtsi>   /* kot149 モジュール */
 #include <behaviors/bat_print.dtsi>
-#include "behaviors/input_gestures_accel.dtsi"
-
 
 #define JP_EXCL   (LS(NUMBER_1))
 #define JP_DQT    (LS(NUMBER_2))
@@ -685,13 +683,18 @@
 
 
 
-&pointer_accel {
-    track-remainders;
-    min-factor = <400>;
-    max-factor = <2800>;
-    speed-threshold = <220>;
-    speed-max = <3000>;
-    acceleration-exponent = <2>;
+/ {
+    pointer_accel: pointer_accel {
+        compatible = "zmk,input-processor-accel";
+        #input-processor-cells = <0>;
+        input-type = <2>; /* INPUT_EV_REL */
+        track-remainders;
+        min-factor = <400>;
+        max-factor = <2800>;
+        speed-threshold = <220>;
+        speed-max = <3000>;
+        acceleration-exponent = <2>;
+    };
 };
 
 &trackball_listener {
