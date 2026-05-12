@@ -9,7 +9,7 @@ jobs:
         with:
           repository: 'kot149/zmk-scroll-snap'
           path: 'scroll-snap'
-      - name: Cat source
-        run: cat scroll-snap/src/*.c
+      - name: List files
+        run: find scroll-snap -type f
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3-branch
