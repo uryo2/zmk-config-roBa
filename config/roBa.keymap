@@ -700,7 +700,8 @@
 &trackball_listener {
     // XY反転 → スケール → 加速度 → オートマウスレイヤー4に自動切替
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                       <&zip_xy_scaler 1 1>,
+                       <&zip_x_scaler 1 1>,
+                       <&zip_y_scaler 3 2>, /* 縦方向の移動量を1.5倍にする */
                        <&pointer_accel>,
                        <&zip_temp_layer 4 300000>;
 
