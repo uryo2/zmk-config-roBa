@@ -33,6 +33,8 @@ struct accel_data {
     uint32_t last_time;
     int32_t rem_x;
     int32_t rem_y;
+    int32_t recent_x;
+    int32_t recent_y;
 };
 
 struct zmk_input_processor_state {
@@ -56,16 +58,32 @@ static int accel_process(const struct device *dev, struct input_event *event,
 
     uint32_t now = k_uptime_get_32();
     uint32_t dt = now - data->last_time;
-    if (dt == 0 || dt > 1000) {
-        data->last_time = now;
+    if (dt > 50) {
+        // Reset recent values if there is a gap in movement (50ms)
+        data->recent_x = 0;
+        data->recent_y = 0;
         data->rem_x = 0;
         data->rem_y = 0;
-        return 0;
     }
     data->last_time = now;
 
-    // Speed in units/s
-    int32_t speed = (((event->value) < 0 ? -(event->value) : (event->value)) * 1000) / dt;
+    if (event->code == INPUT_REL_X) {
+        data->recent_x = event->value;
+    } else if (event->code == INPUT_REL_Y) {
+        data->recent_y = event->value;
+    } else {
+        data->recent_x = event->value;
+        data->recent_y = 0;
+    }
+
+    // Calculate approximate magnitude of (recent_x, recent_y) to ensure the SAME factor is applied to both X and Y
+    int32_t ax = (data->recent_x < 0) ? -data->recent_x : data->recent_x;
+    int32_t ay = (data->recent_y < 0) ? -data->recent_y : data->recent_y;
+    int32_t mag = (ax > ay) ? (ax + ay / 2) : (ay + ax / 2);
+
+    // Use magnitude directly as a proxy for speed. 
+    // Assuming ~100Hz polling rate, mag * 100 roughly equals the old units/sec calculation, but with ZERO time-delta jitter.
+    int32_t speed = mag * 100;
 
     int32_t factor = cfg->min_factor;
     
