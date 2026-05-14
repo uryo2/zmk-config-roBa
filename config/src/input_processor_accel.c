@@ -35,7 +35,13 @@ struct accel_data {
     int32_t rem_y;
 };
 
-static int accel_process(const struct device *dev, struct input_event *event)
+struct zmk_input_processor_state {
+    uint8_t dummy; // We don't use this, but need the pointer type
+};
+
+static int accel_process(const struct device *dev, struct input_event *event,
+                         uint32_t param1, uint32_t param2,
+                         struct zmk_input_processor_state *state)
 {
     const struct accel_config *cfg = dev->config;
     struct accel_data *data = dev->data;
@@ -106,7 +112,9 @@ static int accel_process(const struct device *dev, struct input_event *event)
 }
 
 struct zmk_input_processor_driver_api {
-    int (*handle_event)(const struct device *dev, struct input_event *event);
+    int (*handle_event)(const struct device *dev, struct input_event *event,
+                        uint32_t param1, uint32_t param2,
+                        struct zmk_input_processor_state *state);
 };
 
 static const struct zmk_input_processor_driver_api accel_api = {
