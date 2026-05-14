@@ -65,7 +65,7 @@ static int accel_process(const struct device *dev, struct input_event *event,
     data->last_time = now;
 
     // Speed in units/s
-    int32_t speed = (ABS(event->value) * 1000) / dt;
+    int32_t speed = (((event->value) < 0 ? -(event->value) : (event->value)) * 1000) / dt;
 
     int32_t factor = cfg->min_factor;
     
