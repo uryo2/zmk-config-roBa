@@ -56,34 +56,13 @@ static int accel_process(const struct device *dev, struct input_event *event,
         return 0; 
     }
 
-    uint32_t now = k_uptime_get_32();
-    uint32_t dt = now - data->last_time;
-    if (dt > 50) {
-        // Reset recent values if there is a gap in movement (50ms)
-        data->recent_x = 0;
-        data->recent_y = 0;
-        data->rem_x = 0;
-        data->rem_y = 0;
-    }
-    data->last_time = now;
-
-    if (event->code == INPUT_REL_X) {
-        data->recent_x = event->value;
-    } else if (event->code == INPUT_REL_Y) {
-        data->recent_y = event->value;
-    } else {
-        data->recent_x = event->value;
-        data->recent_y = 0;
-    }
-
-    // Calculate approximate magnitude of (recent_x, recent_y) to ensure the SAME factor is applied to both X and Y
-    int32_t ax = (data->recent_x < 0) ? -data->recent_x : data->recent_x;
-    int32_t ay = (data->recent_y < 0) ? -data->recent_y : data->recent_y;
-    int32_t mag = (ax > ay) ? (ax + ay / 2) : (ay + ax / 2);
-
-    // Use magnitude directly as a proxy for speed. 
-    // Assuming ~100Hz polling rate, mag * 100 roughly equals the old units/sec calculation, but with ZERO time-delta jitter.
-    int32_t speed = mag * 100;
+    // Calculate speed based solely on the magnitude of the current event's delta.
+    // Assuming a polling rate of ~125Hz (8ms), event->value is directly proportional to speed.
+    // Multiplying by 100 puts it in a similar numerical range as the previous time-based calculation,
+    // but completely eliminates time-delta jitter and sticky axis bugs.
+    int32_t current_val = event->value;
+    if (current_val < 0) current_val = -current_val;
+    int32_t speed = current_val * 100;
 
     int32_t factor = cfg->min_factor;
     
