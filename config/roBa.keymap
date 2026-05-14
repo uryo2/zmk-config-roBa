@@ -689,8 +689,8 @@
         #input-processor-cells = <0>;
         input-type = <2>; /* INPUT_EV_REL */
         track-remainders;
-        min-factor = <400>;
-        max-factor = <2000>;
+        min-factor = <800>;
+        max-factor = <1500>;
         speed-threshold = <1500>;
         speed-max = <6000>;
         acceleration-exponent = <2>;
