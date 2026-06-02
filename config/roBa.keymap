@@ -689,7 +689,7 @@
         #input-processor-cells = <0>;
         input-type = <2>; /* INPUT_EV_REL */
         track-remainders;
-        min-factor = <800>;
+        min-factor = <500>;
         max-factor = <1500>;
         speed-threshold = <800>;
         speed-max = <4000>;
@@ -721,7 +721,7 @@
     layer-7 {
         layers = <7>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                           <&zip_mouse_gesture>, <&zip_xy_scaler 1 5>;
+                           <&zip_mouse_gesture>, <&zip_xy_scaler 0 1>;
     };
 
     layer-9 {
