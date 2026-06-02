@@ -691,8 +691,8 @@
         track-remainders;
         min-factor = <500>;
         max-factor = <2000>;
-        speed-threshold = <800>;
-        speed-max = <4000>;
+        speed-threshold = <600>;
+        speed-max = <3000>;
         acceleration-exponent = <2>;
     };
 };
@@ -727,7 +727,7 @@
     layer-9 {
         layers = <9>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                           <&zip_mouse_gesture_l3>, <&zip_xy_scaler 1 1>;
+                           <&zip_mouse_gesture_l3>, <&zip_xy_scaler 1 5>;
     };
 
     layer-1 {
