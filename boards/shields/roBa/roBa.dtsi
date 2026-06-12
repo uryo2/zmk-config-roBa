@@ -116,17 +116,15 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-device = <&trackball>; 
-
-
+        device = <&iqs9151>; 
     };
 };
 
-&spi0 {
+&xiao_i2c {
     status = "disabled";
 
-    trackball: trackball@0 {
+    iqs9151: iqs9151@56 {
         status = "disabled";
-        reg = <0>;
+        reg = <0x56>;
     };
 };

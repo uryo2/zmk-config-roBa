@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/kumamuk-git
     - name: eintim
       url-base: https://github.com/eintim
-    - name: sekigon-gonnoc
-      url-base: https://github.com/sekigon-gonnoc
+    - name: ShiniNet
+      url-base: https://github.com/ShiniNet
     - name: kot149
       url-base: https://github.com/kot149
     - name: ssbb
@@ -17,8 +17,8 @@ manifest:
       remote: zmkfirmware
       revision: v0.3-branch
       import: app/west.yml
-    - name: zmk-driver-paw3222
-      remote: sekigon-gonnoc
+    - name: zmk-driver-iqs9151
+      remote: ShiniNet
       revision: main
     - name: zmk-behavior-battery-typer
       remote: eintim
