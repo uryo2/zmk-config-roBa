@@ -18,10 +18,10 @@ config INPUT
 config ZMK_POINTING
     default y
 
-config SPI
+config I2C
     default y
 
-config PAW3222
+config INPUT_IQS9151
     default y
 
 endif

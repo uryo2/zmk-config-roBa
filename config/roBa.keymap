@@ -41,7 +41,9 @@
 #include "gesture/gesture_L7.dtsi"
 
 #define ZMK_POINTING
+#undef ZMK_POINTING_DEFAULT_MOVE_VAL
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 700
+#undef ZMK_POINTING_DEFAULT_SCRL_VAL
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 40
 #define MOUSE 4
 #define SCROLL 5
@@ -61,22 +63,6 @@
 
 &zip_temp_layer { require-prior-idle-ms = <200>; };
 
-&trackball {
-    // automouse-layer = <4>;  // PMW3610 only, not supported by PAW3222
-    // scroll-layers = <5>;    // PMW3610 only, not supported by PAW3222
-
-    // arrows {
-    //     layers = <3>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
-};
 
 / {
     layer_listeners {
