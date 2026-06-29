@@ -16,7 +16,8 @@
 
     layer-7 {
         layers = <7>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_mouse_gesture>, <&zip_xy_scaler 0 1>;
+        // ジェスチャー判定に届く前の移動量を1/15に減速し、過剰な連打を防ぐ
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 15>, <&zip_mouse_gesture>, <&zip_xy_scaler 0 1>;
     };
 
     layer-9 {
@@ -26,6 +27,7 @@
 
     layer-1 {
         layers = <1>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 5>;
+        // 同様にジェスチャー連打防止のため1/15に減速（カーソル移動も兼ねるため後続の1/5と合わせて調整）
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 15>, <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 5>;
     };
 };
