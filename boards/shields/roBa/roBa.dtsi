@@ -128,3 +128,4 @@
         reg = <0x56>;
     };
 };
+#include "roBa_trackpad.dtsi"

@@ -1,7 +1,6 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include <scroll-snap.dtsi>
-#include <mouse-gesture.dtsi>   /* kot149 モジュール */
+
 #include <behaviors/bat_print.dtsi>
 
 #define JP_EXCL   (LS(NUMBER_1))
@@ -682,41 +681,4 @@
         speed-max = <3000>;
         acceleration-exponent = <2>;
     };
-};
-
-&zip_y_scaler { track-remainders; };
-
-&trackball_listener {
-    // XY反転 → スケール（Y補正） → スクロール減速 → スクロールスナップ → オートマウスレイヤー4に自動切替
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                       <&zip_x_scaler 2 5>,
-                       <&zip_y_scaler 1 2>,
-                       <&zip_scroll_scaler 1 30>,
-                       <&zip_scroll_snap>,
-                       <&zip_temp_layer 4 300000>;
-
-    scroller {
-        layers = <5>;  // レイヤー5でスクロールモード
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_to_scroll_mapper>, <&zip_scroll_snap>, <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_scroll_scaler 1 20>;
-    };
-
-    layer-7 {
-        layers = <7>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_mouse_gesture>, <&zip_xy_scaler 0 1>;
-    };
-
-    layer-9 {
-        layers = <9>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 5>;
-    };
-
-    layer-1 {
-        layers = <1>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 5>;
-    };
-
-    //layer-4 {
-    // layers = <4>;
-    //   input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 1 1>;
-    // };
 };
