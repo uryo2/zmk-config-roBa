@@ -700,7 +700,7 @@
                            <&zip_xy_to_scroll_mapper>,                        // スクロールモードに変更
                            <&zip_scroll_snap>,                                // 縦横スナップ（斜め防止）
                            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,  // スクロール上下反転
-                           <&zip_scroll_scaler 1 20>;                          // スクロール量を1/5倍
+                           <&zip_scroll_scaler 1 60>;                          // スクロール量を1/60倍に減速
     };
 
     layer-7 {
