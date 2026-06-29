@@ -41,9 +41,13 @@
 #include "gesture/gesture_L7.dtsi"
 
 #define ZMK_POINTING
+
 #undef ZMK_POINTING_DEFAULT_MOVE_VAL
+
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 700
+
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 40
 #define MOUSE 4
 #define SCROLL 5
@@ -62,7 +66,6 @@
 //キー入力から一定時間はAMLを発動しない
 
 &zip_temp_layer { require-prior-idle-ms = <200>; };
-
 
 / {
     layer_listeners {
@@ -592,7 +595,7 @@
         MOUSE {
             bindings = <
 &mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                                                        &kp_exit_AML Y  &kp_exit_AML U  &kp_exit_AML I                    &kp_exit_AML O                   &mt_exit_AML_on_tap JP_MINUS P
-&mt_exit_AML_on_tap LSHIFT A  &kp_exit_AML S               &kp_exit_AML D               &kp F                        &kp_exit_AML G                          &trans                                         &trans         &kp_exit_AML H  &mkp MB1        &kp_exit_AML K                    &lt 5 L                          &lt 1 JP_COLON
+&mt_exit_AML_on_tap LSHIFT A  &kp_exit_AML S               &kp_exit_AML D               &kp F                        &kp_exit_AML G                          &trans                                         &trans         &kp_exit_AML H  &kp_exit_AML J  &kp_exit_AML K                    &lt 5 L                          &lt 1 JP_COLON
 &mt_exit_AML_on_tap LSHIFT Z  &mt_exit_AML_on_tap LC(X) X  &mt_exit_AML_on_tap LC(C) C  &mt_exit_AML_on_tap LC(V) V  &kp_exit_AML B                          &lt 6 ESCAPE                                   &lt 6 ESC      &kp_exit_AML N  &kp_exit_AML M  &mt_exit_AML_on_tap JP_SQT COMMA  &mt_exit_AML_on_tap JP_SEMI DOT  &mt_exit_AML_on_tap RIGHT_SHIFT SLASH
 &mo 11                        &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML 9 GRAVE         &mt_exit_AML_on_tap LEFT_CONTROL SPACE  &mt_exit_AML_on_tap LEFT_SHIFT INT_HENKAN      &kp BACKSPACE  &lt 8 ENTER                                                                                        &mo 7
             >;
@@ -667,8 +670,6 @@
     };
 };
 
-
-
 / {
     pointer_accel: pointer_accel {
         compatible = "zmk,input-processor-accel";
@@ -683,44 +684,59 @@
     };
 };
 
-&zip_y_scaler {
-    track-remainders;
-};
+&zip_y_scaler { track-remainders; };
 
 &trackball_listener {
     // XY反転 → スケール（Y補正） → スクロール減速 → スクロールスナップ → オートマウスレイヤー4に自動切替
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                       <&zip_x_scaler 2 5>, /* 横方向: 40% (少し減速) */
-                       <&zip_y_scaler 1 2>, /* 縦方向: 50% (少し減速) */
-                       <&zip_scroll_scaler 1 30>, /* ★2本指スクロールの速度をさらに減速(1/30) */
-                       <&zip_scroll_snap>,       /* ★2本指スクロールを縦横にスナップ */
-                       <&zip_temp_layer 4 300000>;
+
+    input-processors =
+        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+        <&zip_x_scaler 2 5>,
+        /* 横方向: 40% (少し減速) */,
+        <&zip_y_scaler 1 2>,
+        /* 縦方向: 50% (少し減速) */,
+        <&zip_scroll_scaler 1 30>,
+        /* ★2本指スクロールの速度をさらに減速(1/30) */,
+        <&zip_scroll_snap>,
+        /* ★2本指スクロールを縦横にスナップ */,
+        <&zip_temp_layer 4 300000>;
 
     scroller {
         layers = <5>;  // レイヤー5でスクロールモード
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,  // PAW3222の軸反転補正
-                           <&zip_xy_to_scroll_mapper>,                        // スクロールモードに変更
-                           <&zip_scroll_snap>,                                // 縦横スナップ（斜め防止）
-                           <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,  // スクロール上下反転
-                           <&zip_scroll_scaler 1 20>;                          // スクロール量を1/20倍
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+            // PAW3222の軸反転補正,
+            <&zip_xy_to_scroll_mapper>,
+            // スクロールモードに変更,
+            <&zip_scroll_snap>,
+            // 縦横スナップ（斜め防止）,
+            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
+            // スクロール上下反転,
+            <&zip_scroll_scaler 1 20>;
+                          // スクロール量を1/20倍
     };
 
     layer-7 {
         layers = <7>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                           <&zip_mouse_gesture>, <&zip_xy_scaler 0 1>;
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_mouse_gesture>,
+            <&zip_xy_scaler 0 1>;
     };
 
     layer-9 {
         layers = <9>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                           <&zip_xy_scaler 1 5>;
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_xy_scaler 1 5>;
     };
 
     layer-1 {
         layers = <1>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                           <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 5>;
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_mouse_gesture_l2>,
+            <&zip_xy_scaler 1 5>;
     };
 
     //layer-4 {
