@@ -1,3 +1,5 @@
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 #include <mouse-gesture.dtsi>
 #include <scroll-snap.dtsi>
 
