@@ -3,7 +3,7 @@
     stroke-size = <150>;
     movement-threshold = <20>;
     idle-timeout-ms = <250>;
-    gesture-cooldown-ms = <150>;
+    gesture-cooldown-ms = <600>;
 
         taskbar_prev { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(PG_UP)>; };
         taskbar_next { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(PG_DN)>; };

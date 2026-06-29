@@ -13,7 +13,7 @@
         stroke-size = <150>;
         movement-threshold = <20>;
         idle-timeout-ms = <250>;
-        gesture-cooldown-ms = <150>;
+        gesture-cooldown-ms = <600>;
 
         win_max    { pattern = <GESTURE_UP>;    bindings = <&kp LG(UP_ARROW)>; };
         win_left { pattern = <GESTURE_LEFT>;  bindings = <&kp LG(LS(LEFT))>; };
