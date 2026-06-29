@@ -688,11 +688,10 @@
 };
 
 &trackball_listener {
-    // XY反転 → スケール（Y補正） → 加速度 → オートマウスレイヤー4に自動切替
+    // XY反転 → スケール（Y補正） → オートマウスレイヤー4に自動切替
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                       <&pointer_accel>,
-                       <&zip_x_scaler 1 1>,
-                       <&zip_y_scaler 6 5>, /* 縦方向の移動量を1.2倍にする */
+                       <&zip_x_scaler 1 2>,
+                       <&zip_y_scaler 3 5>, /* 縦方向の移動量を1.2倍の半分(0.6倍)にする */
                        <&zip_temp_layer 4 300000>;
 
     scroller {
