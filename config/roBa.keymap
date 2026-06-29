@@ -688,19 +688,21 @@
 };
 
 &trackball_listener {
-    // XY反転 → スケール（Y補正） → オートマウスレイヤー4に自動切替
+    // XY反転 → スケール（Y補正） → スクロール減速 → スクロールスナップ → オートマウスレイヤー4に自動切替
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
                        <&zip_x_scaler 1 2>,
                        <&zip_y_scaler 3 5>, /* 縦方向の移動量を1.2倍の半分(0.6倍)にする */
+                       <&zip_scroll_scaler 1 10>, /* ★2本指スクロールの速度を1/10に減速 */
+                       <&zip_scroll_snap>,       /* ★2本指スクロールを縦横にスナップ */
                        <&zip_temp_layer 4 300000>;
 
     scroller {
         layers = <5>;  // レイヤー5でスクロールモード
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,  // PAW3222の軸反転補正
-                           <&zip_xy_scaler 1 100>,                            // スクロール変換前にXY移動量を1/100に減速
                            <&zip_xy_to_scroll_mapper>,                        // スクロールモードに変更
                            <&zip_scroll_snap>,                                // 縦横スナップ（斜め防止）
-                           <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;  // スクロール上下反転
+                           <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,  // スクロール上下反転
+                           <&zip_scroll_scaler 1 20>;                          // スクロール量を1/20倍
     };
 
     layer-7 {
