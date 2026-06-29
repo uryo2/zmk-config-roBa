@@ -690,9 +690,9 @@
 &trackball_listener {
     // XY反転 → スケール（Y補正） → スクロール減速 → スクロールスナップ → オートマウスレイヤー4に自動切替
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                       <&zip_x_scaler 1 2>,
-                       <&zip_y_scaler 3 5>, /* 縦方向の移動量を1.2倍の半分(0.6倍)にする */
-                       <&zip_scroll_scaler 1 20>, /* ★2本指スクロールの速度をさらに減速(1/20) */
+                       <&zip_x_scaler 2 5>, /* 横方向: 40% (少し減速) */
+                       <&zip_y_scaler 1 2>, /* 縦方向: 50% (少し減速) */
+                       <&zip_scroll_scaler 1 30>, /* ★2本指スクロールの速度をさらに減速(1/30) */
                        <&zip_scroll_snap>,       /* ★2本指スクロールを縦横にスナップ */
                        <&zip_temp_layer 4 300000>;
 
