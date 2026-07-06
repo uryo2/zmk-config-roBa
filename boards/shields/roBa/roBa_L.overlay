@@ -12,7 +12,7 @@
 };
 
 &left_encoder {
-    status = "okay";
+    status = "disabled";
 };
 
 &xiao_i2c {
