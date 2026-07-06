@@ -14,3 +14,18 @@
 &left_encoder {
     status = "okay";
 };
+
+&xiao_i2c {
+    status = "okay";
+
+    iqs9151: iqs9151@56 {
+        compatible = "azoteq,iqs9151";
+        reg = <0x56>;
+        status = "okay";
+        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+};
+
+&trackpad_split {
+    device = <&iqs9151>;
+};
