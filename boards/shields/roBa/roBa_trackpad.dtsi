@@ -18,20 +18,20 @@
 &trackpad_listener {
     // 左手トラックパッド（カーソル・ジェスチャー・ネイティブスクロール）
     // XY反転 → スケール（Y補正） → スクロール減速 → スクロールスナップ → オートマウスレイヤー4に自動切替
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>, <&zip_x_scaler 2 5>, <&zip_y_scaler 1 2>, <&zip_scroll_scaler 1 30>, <&zip_scroll_snap>, <&zip_temp_layer 4 300000>;
+    input-processors = <&zip_x_scaler 2 5>, <&zip_y_scaler 1 2>, <&zip_scroll_scaler 1 30>, <&zip_scroll_snap>, <&zip_temp_layer 4 300000>;
 
     layer-7 {
         layers = <7>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>, <&zip_mouse_gesture>, <&zip_xy_scaler 0 1>;
+        input-processors = <&zip_mouse_gesture>, <&zip_xy_scaler 0 1>;
     };
 
     layer-9 {
         layers = <9>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 5>;
+        input-processors = <&zip_xy_scaler 1 5>;
     };
 
     layer-1 {
         layers = <1>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>, <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 5>;
+        input-processors = <&zip_mouse_gesture_l2>, <&zip_xy_scaler 1 5>;
     };
 };

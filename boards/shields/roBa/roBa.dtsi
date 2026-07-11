@@ -113,34 +113,20 @@
         triggers-per-rotation = <10>;
     };
 
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        trackpad_split: trackpad_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-        };
-    };
-
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-    };
+device = <&trackball>; 
 
-    trackpad_listener: trackpad_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&trackpad_split>;
+
     };
 };
 
-&xiao_i2c {
+&spi0 {
     status = "disabled";
 
-    iqs9151: iqs9151@56 {
+    trackball: trackball@0 {
         status = "disabled";
-        reg = <0x56>;
+        reg = <0>;
     };
 };
-#include "roBa_trackpad.dtsi"
