@@ -18,7 +18,7 @@
 &trackpad_listener {
     // 左手トラックパッド（カーソル・ジェスチャー・ネイティブスクロール）
     // XY反転 → スケール（Y補正） → スクロール減速 → スクロールスナップ → オートマウスレイヤー4に自動切替
-    input-processors = <&zip_x_scaler 2 5>, <&zip_y_scaler 1 2>, <&zip_scroll_scaler 1 30>, <&zip_scroll_snap>, <&zip_temp_layer 4 300000>;
+    input-processors = <&zip_x_scaler 2 5>, <&zip_y_scaler 1 2>, <&zip_scroll_scaler 1 60>, <&zip_scroll_snap>, <&zip_temp_layer 4 300000>;
 
     layer-7 {
         layers = <7>;
