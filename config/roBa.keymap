@@ -669,13 +669,25 @@
 };
 
 / {
-    pointer_accel: pointer_accel {
+    trackpad_accel: trackpad_accel {
         compatible = "zmk,input-processor-accel";
         #input-processor-cells = <0>;
         input-type = <2>; /* INPUT_EV_REL */
         track-remainders;
         min-factor = <500>;
         max-factor = <1000>;
+        speed-threshold = <600>;
+        speed-max = <3000>;
+        acceleration-exponent = <2>;
+    };
+
+    trackball_accel: trackball_accel {
+        compatible = "zmk,input-processor-accel";
+        #input-processor-cells = <0>;
+        input-type = <2>; /* INPUT_EV_REL */
+        track-remainders;
+        min-factor = <500>;
+        max-factor = <2000>;
         speed-threshold = <600>;
         speed-max = <3000>;
         acceleration-exponent = <2>;
