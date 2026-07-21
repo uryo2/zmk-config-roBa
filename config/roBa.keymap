@@ -675,7 +675,7 @@
         input-type = <2>; /* INPUT_EV_REL */
         track-remainders;
         min-factor = <500>;
-        max-factor = <2000>;
+        max-factor = <1000>;
         speed-threshold = <600>;
         speed-max = <3000>;
         acceleration-exponent = <2>;
