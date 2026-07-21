@@ -657,10 +657,10 @@
 
         FUNCTION {
             bindings = <
-&kp F12  &kp F7  &kp F8  &kp F9  &trans                                    &kp JP_CARET  &kp JP_AMPRS  &kp JP_LBRC  &kp JP_RBRC  &kp JP_HASH
-&kp F11  &kp F4  &kp F5  &kp F6  &trans  &kp C_VOLUME_UP      &kp JP_BSLH  &kp JP_DLLR   &kp JP_AT     &kp JP_LPAR  &kp JP_RPAR  &kp QUESTION
-&kp F10  &kp F1  &kp F2  &kp F3  &trans  &kp C_VOL_DN         &kp JP_PIPE  &kp JP_UNDER  &kp JP_MINUS  &kp JP_LCBR  &kp JP_RCBR  &kp JP_EXCL
-&trans   &trans  &trans  &trans  &trans  &trans               &trans       &trans                                                &trans
+&kp F12  &kp F7  &kp F8  &kp F9  &trans                                 &kp JP_CARET  &kp JP_AMPRS  &kp JP_LBRC  &kp JP_RBRC  &kp JP_HASH
+&kp F11  &kp F4  &kp F5  &kp F6  &trans  &trans            &kp JP_BSLH  &kp JP_DLLR   &kp JP_AT     &kp JP_LPAR  &kp JP_RPAR  &kp QUESTION
+&kp F10  &kp F1  &kp F2  &kp F3  &trans  &kp C_VOL_UP      &kp JP_PIPE  &kp JP_UNDER  &kp JP_MINUS  &kp JP_LCBR  &kp JP_RCBR  &kp JP_EXCL
+&trans   &trans  &trans  &trans  &trans  &kp C_VOL_DN      &trans       &trans                                                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
