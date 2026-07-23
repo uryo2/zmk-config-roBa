@@ -147,16 +147,18 @@
         max {
             bindings = <&kp LG(UP_ARROW)>;
             key-positions = <6 7 8>;
+            layers = <0 4>;
         };
 
         minimum {
             bindings = <&kp LG(DOWN)>;
             key-positions = <30 31 32>;
+            layers = <0 4>;
         };
 
         volmute {
             bindings = <&kp C_MUTE>;
-            key-positions = <27 15>;
+            key-positions = <27 39>;
             layers = <1>;
         };
 
@@ -194,6 +196,11 @@
         reload2 {
             bindings = <&kp F5>;
             key-positions = <41 18 19 20>;
+        };
+
+        question {
+            bindings = <&kp QUESTION>;
+            key-positions = <32 33>;
         };
 
         // kakko {
