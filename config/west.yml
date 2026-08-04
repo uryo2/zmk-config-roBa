@@ -45,5 +45,8 @@ manifest:
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: zmk-v0.3.0.0
   self:
     path: config
