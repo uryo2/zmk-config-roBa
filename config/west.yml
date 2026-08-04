@@ -51,5 +51,8 @@ manifest:
     - name: zmk-module-settings-rpc
       remote: cormoran
       revision: zmk-v0.3.0.0
+    - name: zmk-feature-custom-settings
+      remote: cormoran
+      revision: main
   self:
     path: config

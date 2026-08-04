@@ -1,5 +1,6 @@
 #include "roBa.dtsi"
 #include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
@@ -20,10 +21,12 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
+    input-processors = <&mouse_runtime_input_processor>;
 };
 
 &trackpad_listener {
     status = "okay";
+    input-processors = <&mouse_runtime_input_processor>;
 };
 
 &xiao_serial { status = "disabled"; };
