@@ -53,6 +53,6 @@ manifest:
       revision: zmk-v0.3.0.0
     - name: zmk-feature-custom-settings
       remote: cormoran
-      revision: main
+      revision: 5727f85b3812b9456832784385d951a56f95a569
   self:
     path: config
