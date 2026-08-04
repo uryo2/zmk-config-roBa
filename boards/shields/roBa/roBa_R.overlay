@@ -22,6 +22,10 @@
     device = <&trackball>;
 };
 
+&trackpad_listener {
+    status = "okay";
+};
+
 &xiao_serial { status = "disabled"; };
 
 &pinctrl {
