@@ -1,4 +1,5 @@
 #include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <behaviors/bat_print.dtsi>
 
@@ -721,4 +722,12 @@
         speed-max = <3000>;
         acceleration-exponent = <2>;
     };
+};
+
+&trackball_listener {
+    input-processors = <&trackball_accel>, <&mouse_runtime_input_processor>;
+};
+
+&trackpad_listener {
+    input-processors = <&trackpad_accel>, <&mouse_runtime_input_processor>;
 };
