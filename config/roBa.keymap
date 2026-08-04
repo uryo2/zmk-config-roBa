@@ -37,6 +37,7 @@
 #include "gesture/gesture_L2.dtsi"
 #include "gesture/gesture_L3.dtsi"
 #include "gesture/gesture_L7.dtsi"
+#include <behaviors/runtime-sensor-rotate.dtsi>
 
 #define ZMK_POINTING
 
@@ -305,6 +306,27 @@
     };
 
     behaviors {
+        rsr_scroll: rsr_scroll {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            cw-binding = <&msc SCRL_DOWN>;
+            ccw-binding = <&msc SCRL_UP>;
+        };
+
+        rsr_vol: rsr_vol {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            cw-binding = <&kp C_VOLUME_DOWN>;
+            ccw-binding = <&kp C_VOLUME_UP>;
+        };
+        
+        rsr_trans: rsr_trans {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+        };
+
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -563,7 +585,7 @@
 &mo 11                         &kp LEFT_COMMAND          &kp LEFT_ALT  &lt 9 GRAVE  &mt LEFT_CONTROL SPACE  &mt_exit_AML_on_tap LEFT_SHIFT INT_HENKAN      &kp BACKSPACE     &lt 8 ENTER                                            &mo 7
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&rsr_scroll &rsr_trans>;
         };
 
         layer_1_placeholder {
@@ -605,7 +627,7 @@
 &mo 11                        &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML 9 GRAVE         &mt_exit_AML_on_tap LEFT_CONTROL SPACE  &mt_exit_AML_on_tap LEFT_SHIFT INT_HENKAN      &kp BACKSPACE  &lt 8 ENTER                                                                                        &mo 7
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&rsr_scroll &rsr_trans>;
         };
 
         SCROLL {
@@ -670,7 +692,7 @@
 &trans   &trans  &trans  &trans  &trans  &kp C_VOL_DN      &trans       &trans                                                &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
     };
 };
