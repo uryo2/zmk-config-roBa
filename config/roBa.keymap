@@ -572,6 +572,14 @@
                 <&mt_exit_AML_on_tap RIGHT_SHIFT SLASH>,
                 <&mt_exit_AML_on_tap RIGHT_SHIFT JP_EXCL>;
         };
+
+        td_arrow_layer: td_arrow_layer {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ARROW_LAYER";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&lt 9 GRAVE>, <&mo 12>;
+        };
     };
 
     keymap {
@@ -582,7 +590,7 @@
 &mt ESCAPE Q                   &kp W                     &kp E         &kp R        &kp T                                                                                    &kp Y        &kp U  &kp I             &kp O            &mt JP_MINUS P
 &hold_pref_shift LEFT_SHIFT A  &hold_pref_shift LC(S) S  &kp D         &lt 7 F      &kp G                   &mt LS(LG(S)) F2                               &mt LG(LS(S)) F5  &kp H        &kp J  &kp K             &lt 5 L          &lt 1 JP_COLON
 &hold_pref_shift LEFT_SHIFT Z  &mt LC(X) X               &mt LC(C) C   &mt LC(V) V  &kp B                   &mt F2 ESCAPE                                  &lt 6 ESC         &kp N        &kp M  &mt JP_SQT COMMA  &mt JP_SEMI DOT  &hold_pref_shift RIGHT_SHIFT SLASH
-&mo 11                         &kp LEFT_COMMAND          &kp LEFT_ALT  &lt 9 GRAVE  &mt LEFT_CONTROL SPACE  &mt_exit_AML_on_tap LEFT_SHIFT INT_HENKAN      &kp BACKSPACE     &lt 8 ENTER                                            &mo 7
+&mo 11                         &kp LEFT_COMMAND          &kp LEFT_ALT  &td_arrow_layer &mt LEFT_CONTROL SPACE  &mt_exit_AML_on_tap LEFT_SHIFT INT_HENKAN      &kp BACKSPACE     &lt 8 ENTER                                            &mo 7
             >;
 
             sensor-bindings = <&rsr_scroll &rsr_trans>;
@@ -693,6 +701,15 @@
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
+        };
+
+        layer_12 {
+            bindings = <
+&kp TAB  &kp LC(LS(TAB))    &kp LS(UP_ARROW)   &kp LC(TAB)         &mt LS(RC(HOME)) HOME                                &mt JP_PRCNT KP_SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt JP_UNDER JP_MINUS
+&trans   &kp LS(LEFT_ARROW) &kp LS(DOWN_ARROW) &kp LS(RIGHT_ARROW) &mt LS(RC(END)) END    &trans      &kp KP_NUMLOCK    &mt JP_BSLH JP_ASTER   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt JP_AMPRS JP_PLUS
+&trans   &trans             &trans             &trans              &trans                 &trans      &mt JP_AT PERIOD  &mtzeropoint 0 KP_N0   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp JP_EQUAL
+&trans   &trans             &trans             &trans              &mo 10                 &mo 11      &trans            &trans                                                                    &trans
+            >;
         };
     };
 };
