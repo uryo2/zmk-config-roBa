@@ -38,6 +38,7 @@
 #include "gesture/gesture_L3.dtsi"
 #include "gesture/gesture_L7.dtsi"
 #include <behaviors/runtime-sensor-rotate.dtsi>
+#include <behaviors/runtime_macro.dtsi>
 
 #define ZMK_POINTING
 
