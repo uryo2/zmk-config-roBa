@@ -2,6 +2,8 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors/runtime-input-processor.dtsi>
+#include <behaviors/battery_history_request.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -20,6 +22,14 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
+    input-processors = <&mouse_runtime_input_processor>;
+
+    scroller {
+        layers = <5>;
+        input-processors = 
+            <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>,
+            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+    };
 };
 
 &trackpad_listener {
