@@ -23,7 +23,7 @@ manifest:
       import: app/west.yml
     - name: zmk-module-ble-management
       remote: cormoran
-      revision: zmk-v0.3.0.0
+      revision: main
     - name: zmk-module-battery-history
       remote: cormoran
       revision: main
@@ -51,9 +51,12 @@ manifest:
 
     - name: zmk-module-settings-rpc
       remote: cormoran
-      revision: zmk-v0.3.0.0
+      revision: main
     - name: zmk-feature-custom-settings
       remote: cormoran
       revision: 5727f85b3812b9456832784385d951a56f95a569
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
   self:
     path: config
