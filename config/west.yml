@@ -19,7 +19,7 @@ manifest:
   projects:
     - name: zmk
       remote: cormoran
-      revision: main
+      revision: main+custom-studio-protocol
       import: app/west.yml
     - name: zmk-module-ble-management
       remote: cormoran
