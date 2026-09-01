@@ -8,12 +8,12 @@
     zip_mouse_gesture_l2: zip_mouse_gesture_l2 {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
-        enable-eager-mode;
+        // enable-eager-mode;
 
         stroke-size = <150>;
         movement-threshold = <20>;
-        idle-timeout-ms = <250>;
-        gesture-cooldown-ms = <600>;
+        idle-timeout-ms = <150>;
+        gesture-cooldown-ms = <200>;
 
         win_max    { pattern = <GESTURE_UP>;    bindings = <&kp LG(UP_ARROW)>; };
         win_left { pattern = <GESTURE_LEFT>;  bindings = <&kp LG(LS(LEFT))>; };

@@ -15,11 +15,11 @@
     zip_mouse_gesture_l3: zip_mouse_gesture_l3 {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
-        enable-eager-mode;
+        // enable-eager-mode;
         stroke-size = <150>;
         movement-threshold = <20>;
-        idle-timeout-ms = <250>;
-        gesture-cooldown-ms = <600>;
+        idle-timeout-ms = <150>;
+        gesture-cooldown-ms = <200>;
 
         vdesk_prev { pattern = <GESTURE_LEFT>;  bindings = <&alt_shift_tab_press>; };
         vdesk_next { pattern = <GESTURE_RIGHT>; bindings = <&alt_tab_press>; };
